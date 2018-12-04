@@ -4,14 +4,17 @@ App for listen and dowload music from kg.qq.com
 
 ## Used
 
-Build with electron
-
 ```bash
-npm i -g electron
-```
+# install dependencies
+yarn install
 
-Run command
+# serve with hot reload at localhost:9080
+yarn run dev
 
-```bash
-electron main.js [UID] &
+# build electron application for production
+yarn run build
+
+
+# lint all JS/Vue component files in `src/`
+yarn run lint
 ```
