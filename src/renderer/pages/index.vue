@@ -26,6 +26,7 @@ import Mousetrap from 'mousetrap'
 import qs from 'qs'
 
 import { get, size, map, indexOf } from 'lodash'
+import { format } from 'date-fns'
 
 export default {
   name: 'Index',
@@ -107,7 +108,10 @@ export default {
       const data = get(res, 'data')
       return {
         title: data.song_name,
-        author: data.nick,
+        author: `${data.nick} - ${format(
+          data.ctime * 1000,
+          'YYYY/MM/DD HH:mm:ss'
+        )}`,
         url: data.playurl,
         pic: data.cover
       }
