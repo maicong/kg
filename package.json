@@ -1,13 +1,13 @@
 {
   "name": "kg",
   "productName": "kg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "MaiCong",
   "description": "App for listen and dowload music from kg.qq.com",
   "homepage": "https://github.com/maicong/kg",
   "bugs": {
     "url": "https://github.com/maicong/kg/issues",
-    "email" : "i@maicong.me"
+    "email": "i@maicong.me"
   },
   "license": "MIT",
   "main": "./dist/electron/main.js",
@@ -31,6 +31,7 @@
     "about-window": "^1.12.1",
     "aplayer": "^1.10.1",
     "axios": "^0.18.0",
+    "date-fns": "^1.30.1",
     "fetch-jsonp": "^1.1.3",
     "lodash": "^4.17.11",
     "mousetrap": "^1.6.2",
