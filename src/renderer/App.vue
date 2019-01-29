@@ -19,11 +19,16 @@ html
 body
   height 100%
   margin 0
+  overflow-y hidden
   -webkit-tap-highlight-color transparent
   -webkit-font-smoothing antialiased
 
 .page
   position relative
-  height 100%
+  min-height 100%
+  overflow-y hidden
   -webkit-overflow-scrolling touch
+
+#app
+  height 100%
 </style>

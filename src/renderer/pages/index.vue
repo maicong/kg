@@ -26,6 +26,7 @@ import Mousetrap from 'mousetrap'
 import qs from 'qs'
 
 import { get, size, map, indexOf } from 'lodash'
+import { format } from 'date-fns'
 
 export default {
   name: 'Index',
@@ -105,11 +106,31 @@ export default {
       })
 
       const data = get(res, 'data')
+      const nick = get(data, 'nick')
+      const time = format(get(data, 'ctime') * 1000, 'YYYY/MM/DD HH:mm:ss')
       return {
-        title: data.song_name,
-        author: data.nick,
-        url: data.playurl,
-        pic: data.cover
+        ksongmid: get(data, 'ksong_mid'),
+        name: get(data, 'song_name'),
+        artist: `${nick} (${time})`,
+        url: get(data, 'playurl'),
+        cover: get(data, 'cover')
+      }
+    },
+    /**
+     * 获取歌词
+     */
+    async getLyric (ksongmid) {
+      const res = await this.query('https://kg.qq.com/cgi/fcg_lyric', {
+        format: 'jsonp',
+        inCharset: 'utf8',
+        outCharset: 'utf-8',
+        callback: 'kg',
+        ksongmid: ksongmid
+      })
+
+      const data = get(res, 'data')
+      if (data) {
+        return data.lyric
       }
     },
     /**
@@ -143,8 +164,10 @@ export default {
 
       for (const id of ids) {
         const data = await this.getDetail(id)
+        const ksongmid = get(data, 'ksongmid')
+        data.lrc = (await this.getLyric(ksongmid)) || '[00:00.00] 暂无歌词'
         this.msg = `加载歌曲 (${indexOf(ids, id) + 1}/${size(ids)}) ${
-          data.title
+          data.name
         }`
         this.dataList.push(data)
       }
@@ -165,15 +188,21 @@ export default {
      */
     render () {
       this.player = new APlayer({
-        element: this.$refs.player,
-        autoplay: true,
-        showlrc: false,
+        container: this.$refs.player,
+        volume: 0.8,
+        lrcType: 1,
         mutex: true,
+        mini: false,
+        autoplay: true,
         preload: 'metadata',
-        mode: 'circulation',
-        listmaxheight: '206px',
-        music: this.dataList
+        loop: 'all',
+        order: 'list',
+        listFolded: false,
+        listMaxHeight: '230px',
+        audio: this.dataList
       })
+
+      this.$refs.player.classList.remove('aplayer-withlrc')
 
       const el = document.querySelector('.aplayer-music')
       const span = document.createElement('span')
@@ -188,7 +217,7 @@ export default {
       this.player.on('canplay', () => {
         const current = this.player.list.audios[this.player.list.index]
         link.href = current.url
-        link.download = `${current.title}-${current.author}`
+        link.download = `${current.name}-${current.artist}`
       })
 
       this.bindKey()
@@ -224,9 +253,10 @@ export default {
 
 <style lang="stylus">
 .page-index
-  padding 10px
+  display flex
+  flex-direction column
   .label
-    padding 3px
+    padding 9px
     background #eee
     border-radius 3px
     .input
@@ -245,11 +275,15 @@ export default {
         border-color #bbb
       &::placeholder
         color #ccc
+      &:readonly
+        opacity .65
+        cursor not-allowed
   .message
     font-size 12px
     height 30px
     line-height 30px
     padding 0 12px
+    margin-top -9px
     text-align center
     color #c79a2a
     background #eee
@@ -257,14 +291,46 @@ export default {
     &--error
       color #d03a3a
   .aplayer
-    margin 12px 0 0 0 !important
-    box-shadow none !important
+    flex 1
+    padding-right 180px
+    margin 0 !important
+    box-shadow none
+    &-body
+      position initial
+      padding 9px
     &-info
-      margin-bottom 20px
+      display flex
+      flex-direction column
+      justify-content space-between
+      padding 0 5px
       border-bottom 0 !important
+    &-lrc
+      display block
+      position absolute
+      right 0
+      top 0
+      bottom 0
+      width 180px
+      height 100%
+      margin auto
+      border-left 5px solid #eee
+      &-contents
+        position absolute
+        left 0
+        top 0
+        bottom 0
+        margin auto
+        height 16px
+      &-current
+        font-weight bold
+      &:before,
+      &:after
+        height 30px
     &-music
       display flex
       align-items center
+    &-author
+      white-space pre-wrap
     &-link
       font-size 12px
       color #666
@@ -275,6 +341,13 @@ export default {
         text-decoration none
         &:hover
           color blue
+    &-icon
+      &-order,
+      &-loop
+        display inline !important
+      &-menu,
+      &-lrc
+        display none !important
     &-list
       overflow auto !important
       &::-webkit-scrollbar
