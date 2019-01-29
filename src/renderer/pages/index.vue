@@ -25,7 +25,7 @@ import APlayer from 'aplayer'
 import Mousetrap from 'mousetrap'
 import qs from 'qs'
 
-import { get, size, map, indexOf } from 'lodash'
+import { get, size, map, indexOf, replace } from 'lodash'
 import { format } from 'date-fns'
 
 export default {
@@ -106,7 +106,7 @@ export default {
       })
 
       const data = get(res, 'data')
-      const nick = get(data, 'nick')
+      const nick = replace(get(data, 'nick'), /\[em\].*?\[\/em\]/, '')
       const time = format(get(data, 'ctime') * 1000, 'YYYY/MM/DD HH:mm:ss')
       return {
         ksongmid: get(data, 'ksong_mid'),
@@ -165,7 +165,8 @@ export default {
       for (const id of ids) {
         const data = await this.getDetail(id)
         const ksongmid = get(data, 'ksongmid')
-        data.lrc = (await this.getLyric(ksongmid)) || '[00:00.00] 暂无歌词'
+        const lrc = await this.getLyric(ksongmid)
+        data.lrc = lrc || '[00:00.00] 暂无歌词'
         this.msg = `加载歌曲 (${indexOf(ids, id) + 1}/${size(ids)}) ${
           data.name
         }`
@@ -198,7 +199,7 @@ export default {
         loop: 'all',
         order: 'list',
         listFolded: false,
-        listMaxHeight: '230px',
+        listMaxHeight: '270px',
         audio: this.dataList
       })
 
@@ -218,6 +219,11 @@ export default {
         const current = this.player.list.audios[this.player.list.index]
         link.href = current.url
         link.download = `${current.name}-${current.artist}`
+      })
+
+      this.player.on('listswitch', () => {
+        const lrcEl = document.querySelector('.aplayer-lrc-contents')
+        lrcEl.style = `transform:translateY(0)`
       })
 
       this.bindKey()
@@ -292,7 +298,7 @@ export default {
       color #d03a3a
   .aplayer
     flex 1
-    padding-right 180px
+    padding-right 200px
     margin 0 !important
     box-shadow none
     &-body
@@ -310,7 +316,7 @@ export default {
       right 0
       top 0
       bottom 0
-      width 180px
+      width 200px
       height 100%
       margin auto
       border-left 5px solid #eee
@@ -321,6 +327,8 @@ export default {
         bottom 0
         margin auto
         height 16px
+        p
+          padding 0 10px !important
       &-current
         font-weight bold
       &:before,
@@ -349,6 +357,7 @@ export default {
       &-lrc
         display none !important
     &-list
+      margin-top 5px
       overflow auto !important
       &::-webkit-scrollbar
         display none
