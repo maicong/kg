@@ -23,12 +23,9 @@ body
   -webkit-tap-highlight-color transparent
   -webkit-font-smoothing antialiased
 
-.page
-  position relative
-  min-height 100%
-  overflow-y hidden
-  -webkit-overflow-scrolling touch
-
 #app
   height 100%
+
+.page
+  min-height 100%
 </style>
