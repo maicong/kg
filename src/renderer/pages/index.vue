@@ -2,6 +2,7 @@
 .page.page-index
   .label
     input.input(
+      ref="input",
       type="text",
       placeholder="输入 UID 并回车",
       v-model="uid",
@@ -14,8 +15,23 @@
   ) {{ error || msg }}
   .aplayer(
     ref="player",
-    v-show="isLoad"
-  ) Loading
+    :class="{ 'aplayer--loading': isWait }",
+    v-show="isLoad || isWait"
+  )
+    svg.circular(
+      viewBox="0 0 36 36"
+    )
+      path.circle-bg(
+        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+      )
+      path.circle(
+        :stroke-dasharray="`${percentage}, 100`",
+        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+      )
+      text.percentage(
+        x="18",
+        y="21"
+      ) {{ percentage ? `${percentage}%` : '--' }}
 </template>
 
 <script>
@@ -25,7 +41,7 @@ import APlayer from 'aplayer'
 import Mousetrap from 'mousetrap'
 import qs from 'qs'
 
-import { get, size, map, indexOf, replace } from 'lodash'
+import { get, size, map, indexOf, round, replace } from 'lodash'
 import { format } from 'date-fns'
 
 export default {
@@ -35,6 +51,7 @@ export default {
       isLoad: false,
       isWait: false,
       showHistory: false,
+      percentage: 0,
       uid: '',
       player: null,
       msg: '',
@@ -151,6 +168,7 @@ export default {
         return
       }
 
+      this.percentage = 0
       this.msg = '加载歌单中...'
 
       const ids = await this.getIds(uid, 1)
@@ -167,6 +185,7 @@ export default {
         const ksongmid = get(data, 'ksongmid')
         const lrc = await this.getLyric(ksongmid)
         data.lrc = lrc || '[00:00.00] 暂无歌词'
+        this.percentage = round(((indexOf(ids, id) + 1) / size(ids)) * 100)
         this.msg = `加载歌曲 (${indexOf(ids, id) + 1}/${size(ids)}) ${
           data.name
         }`
@@ -199,10 +218,11 @@ export default {
         loop: 'all',
         order: 'list',
         listFolded: false,
-        listMaxHeight: '270px',
+        listMaxHeight: '262px',
         audio: this.dataList
       })
 
+      this.$refs.input.blur()
       this.$refs.player.classList.remove('aplayer-withlrc')
 
       const el = document.querySelector('.aplayer-music')
@@ -281,7 +301,7 @@ export default {
         border-color #bbb
       &::placeholder
         color #ccc
-      &:readonly
+      &[readonly]
         opacity .65
         cursor not-allowed
   .message
@@ -301,6 +321,31 @@ export default {
     padding-right 200px
     margin 0 !important
     box-shadow none
+    .circular
+      width 80px
+      height 80px
+      .circle-bg
+        fill none
+        stroke #eee
+        stroke-width 3.8
+      .circle
+        fill none
+        stroke #3c9ee5
+        stroke-width 2.8
+        stroke-linecap round
+        animation progress 1s ease-out forwards
+        @keyframes progress
+          0%
+            stroke-dasharray 0 100
+      .percentage
+        fill #aaa
+        font-size .5em
+        text-anchor middle
+    &--loading
+      display flex
+      align-items center
+      justify-content center
+      padding-right 0
     &-body
       position initial
       padding 9px
@@ -357,7 +402,7 @@ export default {
       &-lrc
         display none !important
     &-list
-      margin-top 5px
+      display block !important
       overflow auto !important
       &::-webkit-scrollbar
         display none
