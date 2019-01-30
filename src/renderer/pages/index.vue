@@ -13,13 +13,17 @@
     :class="{ 'message--error': error }"
     v-show="msg"
   ) {{ error || msg }}
-  .aplayer(
-    ref="player",
-    :class="{ 'aplayer--loading': isWait }",
+  .audio(
+    :class="{ 'audio--loading': isWait }",
     v-show="isLoad || isWait"
   )
+    .aplayer(
+      ref="player",
+      v-show="isLoad"
+    )
     svg.circular(
-      viewBox="0 0 36 36"
+      viewBox="0 0 36 36",
+      v-show="isWait"
     )
       path.circle-bg(
         d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
@@ -160,6 +164,7 @@ export default {
       }
 
       this.error = ''
+      this.isLoad = false
       this.isWait = true
 
       if (!uid) {
@@ -316,36 +321,37 @@ export default {
     border-radius 0 0 3px 3px
     &--error
       color #d03a3a
+  .audio
+    flex 1
+    display flex
+    &--loading
+      align-items center
+      justify-content center
+  .circular
+    width 80px
+    height 80px
+    .circle-bg
+      fill none
+      stroke #eee
+      stroke-width 3.8
+    .circle
+      fill none
+      stroke #3c9ee5
+      stroke-width 2.8
+      stroke-linecap round
+      animation progress 1s ease-out forwards
+      @keyframes progress
+        0%
+          stroke-dasharray 0 100
+    .percentage
+      fill #aaa
+      font-size .5em
+      text-anchor middle
   .aplayer
     flex 1
     padding-right 200px
     margin 0 !important
     box-shadow none
-    .circular
-      width 80px
-      height 80px
-      .circle-bg
-        fill none
-        stroke #eee
-        stroke-width 3.8
-      .circle
-        fill none
-        stroke #3c9ee5
-        stroke-width 2.8
-        stroke-linecap round
-        animation progress 1s ease-out forwards
-        @keyframes progress
-          0%
-            stroke-dasharray 0 100
-      .percentage
-        fill #aaa
-        font-size .5em
-        text-anchor middle
-    &--loading
-      display flex
-      align-items center
-      justify-content center
-      padding-right 0
     &-body
       position initial
       padding 9px
