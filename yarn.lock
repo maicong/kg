@@ -105,24 +105,24 @@
     "@types/babel-types" "*"
 
 "@types/node@^8.0.24":
-  version "8.10.39"
-  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-8.10.39.tgz#e7e87ad00364dd7bc485c940926345b8ec1a26ca"
-  integrity sha1-5+h60ANk3XvEhclAkmNFuOwaJso=
+  version "8.10.40"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-8.10.40.tgz#4314888d5cd537945d73e9ce165c04cc550144a4"
+  integrity sha1-QxSIjVzVN5Rdc+nOFlwEzFUBRKQ=
 
-"@vue/component-compiler-utils@^2.4.0":
-  version "2.5.0"
-  resolved "http://registry.npm.taobao.org/@vue/component-compiler-utils/download/@vue/component-compiler-utils-2.5.0.tgz#411846d582d393f701f747517ddd29275ce64ca4"
-  integrity sha1-QRhG1YLTk/cB90dRfd0pJ1zmTKQ=
+"@vue/component-compiler-utils@^2.5.1":
+  version "2.5.2"
+  resolved "http://registry.npm.taobao.org/@vue/component-compiler-utils/download/@vue/component-compiler-utils-2.5.2.tgz#a8d57e773354ab10e4742c7d6a8dd86184d4d7be"
+  integrity sha1-qNV+dzNUqxDkdCx9ao3YYYTU174=
   dependencies:
     consolidate "^0.15.1"
     hash-sum "^1.0.2"
     lru-cache "^4.1.2"
     merge-source-map "^1.1.0"
-    postcss "^7.0.7"
+    postcss "^7.0.14"
     postcss-selector-parser "^5.0.0"
-    prettier "1.13.7"
-    source-map "^0.7.3"
-    vue-template-es2015-compiler "^1.6.0"
+    prettier "1.16.3"
+    source-map "~0.6.1"
+    vue-template-es2015-compiler "^1.8.2"
 
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
@@ -335,9 +335,9 @@ acorn@^5.5.0:
   integrity sha1-Z6ojG/iBKXS4UjWpZ3Hra9B+onk=
 
 acorn@^6.0.5:
-  version "6.0.5"
-  resolved "http://registry.npm.taobao.org/acorn/download/acorn-6.0.5.tgz#81730c0815f3f3b34d8efa95cb7430965f4d887a"
-  integrity sha1-gXMMCBXz87NNjvqVy3Qwll9NiHo=
+  version "6.1.0"
+  resolved "http://registry.npm.taobao.org/acorn/download/acorn-6.1.0.tgz#b0a3be31752c97a0f7013c5f4903b71a05db6818"
+  integrity sha1-sKO+MXUsl6D3ATxfSQO3GgXbaBg=
 
 ajv-errors@^1.0.0:
   version "1.0.1"
@@ -350,9 +350,9 @@ ajv-keywords@^2.1.0:
   integrity sha1-YXmX/F9gV2iUxDX5QNgZ4TW4B2I=
 
 ajv-keywords@^3.1.0:
-  version "3.2.0"
-  resolved "http://registry.npm.taobao.org/ajv-keywords/download/ajv-keywords-3.2.0.tgz#e86b819c602cf8821ad637413698f1dec021847a"
-  integrity sha1-6GuBnGAs+IIa1jdBNpjx3sAhhHo=
+  version "3.4.0"
+  resolved "http://registry.npm.taobao.org/ajv-keywords/download/ajv-keywords-3.4.0.tgz#4b831e7b531415a7cc518cd404e73f6193c6349d"
+  integrity sha1-S4Mee1MUFafMUYzUBOc/YZPGNJ0=
 
 ajv@^5.2.3, ajv@^5.3.0:
   version "5.5.2"
@@ -365,9 +365,9 @@ ajv@^5.2.3, ajv@^5.3.0:
     json-schema-traverse "^0.3.0"
 
 ajv@^6.1.0, ajv@^6.5.0, ajv@^6.5.5:
-  version "6.7.0"
-  resolved "http://registry.npm.taobao.org/ajv/download/ajv-6.7.0.tgz#e3ce7bb372d6577bb1839f1dfdfcbf5ad2948d96"
-  integrity sha1-4857s3LWV3uxg58d/fy/WtKUjZY=
+  version "6.9.1"
+  resolved "http://registry.npm.taobao.org/ajv/download/ajv-6.9.1.tgz#a4d3683d74abc5670e75f0b16520f70a20ea8dc1"
+  integrity sha1-pNNoPXSrxWcOdfCxZSD3CiDqjcE=
   dependencies:
     fast-deep-equal "^2.0.1"
     fast-json-stable-stringify "^2.0.0"
@@ -404,9 +404,9 @@ ansi-escapes@^1.0.0:
   integrity sha1-06ioOzGapneTZisT52HHkRQiMG4=
 
 ansi-escapes@^3.0.0:
-  version "3.1.0"
-  resolved "http://registry.npm.taobao.org/ansi-escapes/download/ansi-escapes-3.1.0.tgz#f73207bb81207d75fd6c83f125af26eea378ca30"
-  integrity sha1-9zIHu4EgfXX9bIPxJa8m7qN4yjA=
+  version "3.2.0"
+  resolved "http://registry.npm.taobao.org/ansi-escapes/download/ansi-escapes-3.2.0.tgz#8780b98ff9dbf5638152d1f1fe5c1d7b4442976b"
+  integrity sha1-h4C5j/nb9WOBUtHx/lwde0RCl2s=
 
 ansi-html@0.0.7:
   version "0.0.7"
@@ -422,6 +422,11 @@ ansi-regex@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/ansi-regex/download/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
   integrity sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=
+
+ansi-regex@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.taobao.org/ansi-regex/download/ansi-regex-4.0.0.tgz#70de791edf021404c3fd615aa89118ae0432e5a9"
+  integrity sha1-cN55Ht8CFATD/WFaqJEYrgQy5ak=
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -576,7 +581,7 @@ ast-types@0.9.6:
   resolved "http://registry.npm.taobao.org/ast-types/download/ast-types-0.9.6.tgz#102c9e9e9005d3e7e3829bf0c4fa24ee862ee9b9"
   integrity sha1-ECyenpAF0+fjgpvwxPok7oYu6bk=
 
-async-each@^1.0.0:
+async-each@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/async-each/download/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
   integrity sha1-GdOGodntxufByF04iu28xW0zYC0=
@@ -1620,9 +1625,9 @@ big.js@^5.2.2:
   integrity sha1-ZfCvOC9Xi83HQr2cKB6cstd2gyg=
 
 binary-extensions@^1.0.0:
-  version "1.12.0"
-  resolved "http://registry.npm.taobao.org/binary-extensions/download/binary-extensions-1.12.0.tgz#c2d780f53d45bba8317a8902d4ceeaf3a6385b14"
-  integrity sha1-wteA9T1Fu6gxeokC1M7q86Y4WxQ=
+  version "1.13.0"
+  resolved "http://registry.npm.taobao.org/binary-extensions/download/binary-extensions-1.13.0.tgz#9523e001306a32444b907423f1de2164222f6ab1"
+  integrity sha1-lSPgATBqMkRLkHQj8d4hZCIvarE=
 
 binary@^0.3.0:
   version "0.3.0"
@@ -1690,7 +1695,7 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-braces@^2.3.0, braces@^2.3.1:
+braces@^2.3.1, braces@^2.3.2:
   version "2.3.2"
   resolved "http://registry.npm.taobao.org/braces/download/braces-2.3.2.tgz#5979fd3f14cd531565e5fa2df1abfff1dfaee729"
   integrity sha1-WXn9PxTNUxVl5fot8av/8d+u5yk=
@@ -1833,11 +1838,6 @@ buffers@~0.1.1:
   resolved "http://registry.npm.taobao.org/buffers/download/buffers-0.1.1.tgz#b24579c3bed4d6d396aeee6d9a8ae7f5482ab7bb"
   integrity sha1-skV5w77U1tOWru5tmorn9Ugqt7s=
 
-builtin-modules@^1.0.0:
-  version "1.1.1"
-  resolved "http://registry.npm.taobao.org/builtin-modules/download/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
-  integrity sha1-Jw8HbFpywC9bZaR9+Uxf46J4iS8=
-
 builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/builtin-status-codes/download/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
@@ -1940,11 +1940,6 @@ camelcase@^2.0.0:
   resolved "http://registry.npm.taobao.org/camelcase/download/camelcase-2.1.1.tgz#7c1d16d679a1bbe59ca02cacecfb011e201f5a1f"
   integrity sha1-fB0W1nmhu+WcoCys7PsBHiAfWh8=
 
-camelcase@^3.0.0:
-  version "3.0.0"
-  resolved "http://registry.npm.taobao.org/camelcase/download/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
-  integrity sha1-MvxLn82vhF/N9+c7uXysImHwqwo=
-
 camelcase@^4.1.0:
   version "4.1.0"
   resolved "http://registry.npm.taobao.org/camelcase/download/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
@@ -1966,14 +1961,14 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000929"
-  resolved "http://registry.npm.taobao.org/caniuse-db/download/caniuse-db-1.0.30000929.tgz#f18c557b9cbf33e2787134c915b82e3ed3331b87"
-  integrity sha1-8YxVe5y/M+J4cTTJFbguPtMzG4c=
+  version "1.0.30000936"
+  resolved "http://registry.npm.taobao.org/caniuse-db/download/caniuse-db-1.0.30000936.tgz#19035ce7c0f44c1562328d73bd455a2390206070"
+  integrity sha1-GQNc58D0TBViMo1zvUVaI5AgYHA=
 
 caniuse-lite@^1.0.30000844:
-  version "1.0.30000929"
-  resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000929.tgz#7b391b781a9c3097ecc39ea053301aea8ea16317"
-  integrity sha1-ezkbeBqcMJfsw56gUzAa6o6hYxc=
+  version "1.0.30000936"
+  resolved "http://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30000936.tgz#5d33b118763988bf721b9b8ad436d0400e4a116b"
+  integrity sha1-XTOxGHY5iL9yG5uK1DbQQA5KEWs=
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -1989,14 +1984,13 @@ center-align@^0.1.1:
     lazy-cache "^1.0.3"
 
 cfonts@^2.1.2:
-  version "2.4.0"
-  resolved "http://registry.npm.taobao.org/cfonts/download/cfonts-2.4.0.tgz#43c94d57da004d1c976fbf8d6eb97273e7745081"
-  integrity sha1-Q8lNV9oATRyXb7+Nbrlyc+d0UIE=
+  version "2.4.2"
+  resolved "http://registry.npm.taobao.org/cfonts/download/cfonts-2.4.2.tgz#fa94278e9163d4e31ffa4668d621cf2a197894a4"
+  integrity sha1-+pQnjpFj1OMf+kZo1iHPKhl4lKQ=
   dependencies:
     ansi-styles "^3.2.1"
-    babel-runtime "^6.26.0"
     chalk "^2.4.2"
-    change-case "^3.0.2"
+    change-case "^3.1.0"
     window-size "^1.1.1"
 
 chainsaw@~0.1.0:
@@ -2050,7 +2044,7 @@ change-case@3.0.x:
     upper-case "^1.1.1"
     upper-case-first "^1.1.0"
 
-change-case@^3.0.2:
+change-case@^3.1.0:
   version "3.1.0"
   resolved "http://registry.npm.taobao.org/change-case/download/change-case-3.1.0.tgz#0e611b7edc9952df2e8513b27b42de72647dd17e"
   integrity sha1-DmEbftyZUt8uhROye0LecmR90X4=
@@ -2087,24 +2081,23 @@ chardet@^0.4.0:
   integrity sha1-tUc7M9yXxCTl2Y3IfVXU2KKci/I=
 
 chokidar@^2.0.0, chokidar@^2.0.2:
-  version "2.0.4"
-  resolved "http://registry.npm.taobao.org/chokidar/download/chokidar-2.0.4.tgz#356ff4e2b0e8e43e322d18a372460bbcf3accd26"
-  integrity sha1-NW/04rDo5D4yLRijckYLvPOszSY=
+  version "2.1.1"
+  resolved "http://registry.npm.taobao.org/chokidar/download/chokidar-2.1.1.tgz#adc39ad55a2adf26548bd2afa048f611091f9184"
+  integrity sha1-rcOa1Voq3yZUi9KvoEj2EQkfkYQ=
   dependencies:
     anymatch "^2.0.0"
-    async-each "^1.0.0"
-    braces "^2.3.0"
+    async-each "^1.0.1"
+    braces "^2.3.2"
     glob-parent "^3.1.0"
-    inherits "^2.0.1"
+    inherits "^2.0.3"
     is-binary-path "^1.0.0"
     is-glob "^4.0.0"
-    lodash.debounce "^4.0.8"
-    normalize-path "^2.1.1"
+    normalize-path "^3.0.0"
     path-is-absolute "^1.0.0"
-    readdirp "^2.0.0"
-    upath "^1.0.5"
+    readdirp "^2.2.1"
+    upath "^1.1.0"
   optionalDependencies:
-    fsevents "^1.2.2"
+    fsevents "^1.2.7"
 
 chownr@^1.0.1, chownr@^1.1.1:
   version "1.1.1"
@@ -2182,7 +2175,7 @@ cli-cursor@^2.1.0:
   dependencies:
     restore-cursor "^2.0.0"
 
-cli-spinners@^1.0.1:
+cli-spinners@^1.3.1:
   version "1.3.1"
   resolved "http://registry.npm.taobao.org/cli-spinners/download/cli-spinners-1.3.1.tgz#002c1990912d0d59580c93bd36c056de99e4259a"
   integrity sha1-ACwZkJEtDVlYDJO9NsBW3pnkJZo=
@@ -2200,15 +2193,6 @@ cliui@^2.1.0:
     center-align "^0.1.1"
     right-align "^0.1.1"
     wordwrap "0.0.2"
-
-cliui@^3.2.0:
-  version "3.2.0"
-  resolved "http://registry.npm.taobao.org/cliui/download/cliui-3.2.0.tgz#120601537a916d29940f934da3b48d585a39213d"
-  integrity sha1-EgYBU3qRbSmUD5NNo7SNWFo5IT0=
-  dependencies:
-    string-width "^1.0.1"
-    strip-ansi "^3.0.1"
-    wrap-ansi "^2.0.0"
 
 cliui@^4.0.0:
   version "4.1.0"
@@ -2296,7 +2280,7 @@ colormin@^1.0.5:
     css-color-names "0.0.4"
     has "^1.0.1"
 
-colors@^1.2.0:
+colors@^1.3.3:
   version "1.3.3"
   resolved "http://registry.npm.taobao.org/colors/download/colors-1.3.3.tgz#39e005d546afe01e01f9c4ca8fa50f686a01205d"
   integrity sha1-OeAF1Uav4B4B+cTKj6UPaGoBIF0=
@@ -2509,9 +2493,9 @@ copy-webpack-plugin@^4.5.1:
     serialize-javascript "^1.4.0"
 
 core-js@^2.4.0, core-js@^2.5.0:
-  version "2.6.2"
-  resolved "http://registry.npm.taobao.org/core-js/download/core-js-2.6.2.tgz#267988d7268323b349e20b4588211655f0e83944"
-  integrity sha1-JnmI1yaDI7NJ4gtFiCEWVfDoOUQ=
+  version "2.6.4"
+  resolved "http://registry.npm.taobao.org/core-js/download/core-js-2.6.4.tgz#b8897c062c4d769dd30a0ac5c73976c47f92ea0d"
+  integrity sha1-uIl8BixNdp3TCgrFxzl2xH+S6g0=
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -2748,14 +2732,14 @@ de-indent@^1.0.2:
   resolved "http://registry.npm.taobao.org/de-indent/download/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
   integrity sha1-sgOOhG3DO6pXlhKNCAS0VbjB4h0=
 
-debug@*, debug@^4.1.0:
+debug@*, debug@^4.1.0, debug@^4.1.1:
   version "4.1.1"
   resolved "http://registry.npm.taobao.org/debug/download/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   integrity sha1-O3ImAlUQnGtYnO4FDx1RYTlmR5E=
   dependencies:
     ms "^2.1.1"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.1.3, debug@^2.2.0, debug@^2.3.3, debug@^2.5.1, debug@^2.6.3, debug@^2.6.8, debug@^2.6.9:
+debug@2.6.9, debug@^2.1.2, debug@^2.1.3, debug@^2.2.0, debug@^2.3.3, debug@^2.5.1, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "http://registry.npm.taobao.org/debug/download/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   integrity sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
@@ -2776,7 +2760,7 @@ debug@^3.0.0, debug@^3.1.0, debug@^3.2.5:
   dependencies:
     ms "^2.1.1"
 
-decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
+decamelize@^1.0.0, decamelize@^1.1.2, decamelize@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/decamelize/download/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
@@ -2833,6 +2817,13 @@ default-gateway@^2.6.0:
   dependencies:
     execa "^0.10.0"
     ip-regex "^2.1.0"
+
+defaults@^1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/defaults/download/defaults-1.0.3.tgz#c656051e9817d9ff08ed881477f3fe4019f3ef7d"
+  integrity sha1-xlYFHpgX2f8I7YgUd/P+QBnz730=
+  dependencies:
+    clone "^1.0.2"
 
 define-properties@^1.1.2:
   version "1.1.3"
@@ -3077,9 +3068,9 @@ dot-prop@^4.1.0:
     is-obj "^1.0.0"
 
 duplexify@^3.4.2, duplexify@^3.6.0:
-  version "3.6.1"
-  resolved "http://registry.npm.taobao.org/duplexify/download/duplexify-3.6.1.tgz#b1a7a29c4abfd639585efaecce80d666b1e34125"
-  integrity sha1-saeinEq/1jlYXvrszoDWZrHjQSU=
+  version "3.7.1"
+  resolved "http://registry.npm.taobao.org/duplexify/download/duplexify-3.7.1.tgz#2a4df5317f6ccfd91f86d6fd25d8d8a103b88309"
+  integrity sha1-Kk31MX9sz9kfhtb9JdjYoQO4gwk=
   dependencies:
     end-of-stream "^1.0.0"
     inherits "^2.0.1"
@@ -3203,20 +3194,19 @@ electron-packager@^12.1.0:
     yargs-parser "^10.0.0"
 
 electron-rebuild@^1.8.1:
-  version "1.8.2"
-  resolved "http://registry.npm.taobao.org/electron-rebuild/download/electron-rebuild-1.8.2.tgz#bfffba64da78e1b403cb79d5150cfa3336645140"
-  integrity sha1-v/+6ZNp44bQDy3nVFQz6MzZkUUA=
+  version "1.8.4"
+  resolved "http://registry.npm.taobao.org/electron-rebuild/download/electron-rebuild-1.8.4.tgz#cd5384d38c2d6b4463103e375f3779d7abbae19b"
+  integrity sha1-zVOE04wta0RjED43Xzd516u64Zs=
   dependencies:
-    colors "^1.2.0"
-    debug "^2.6.3"
+    colors "^1.3.3"
+    debug "^4.1.1"
     detect-libc "^1.0.3"
-    fs-extra "^3.0.1"
-    node-abi "^2.0.0"
-    node-gyp "^3.6.0"
-    ora "^1.2.0"
-    rimraf "^2.6.1"
-    spawn-rx "^2.0.10"
-    yargs "^7.0.2"
+    fs-extra "^7.0.1"
+    node-abi "^2.7.0"
+    node-gyp "^3.8.0"
+    ora "^3.0.0"
+    spawn-rx "^3.0.0"
+    yargs "^12.0.5"
 
 electron-store@^2.0.0:
   version "2.0.0"
@@ -3226,14 +3216,14 @@ electron-store@^2.0.0:
     conf "^2.0.0"
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47:
-  version "1.3.103"
-  resolved "http://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.103.tgz#a695777efdbc419cad6cbb0e58458251302cd52f"
-  integrity sha1-ppV3fv28QZytbLsOWEWCUTAs1S8=
+  version "1.3.113"
+  resolved "http://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.113.tgz#b1ccf619df7295aea17bc6951dc689632629e4a9"
+  integrity sha1-scz2Gd9yla6he8aVHcaJYyYp5Kk=
 
 electron@^2.0.4:
-  version "2.0.16"
-  resolved "http://registry.npm.taobao.org/electron/download/electron-2.0.16.tgz#cf338fdc0ff4e2df4f6536c968338d6f8b621820"
-  integrity sha1-zzOP3A/04t9PZTbJaDONb4tiGCA=
+  version "2.0.17"
+  resolved "http://registry.npm.taobao.org/electron/download/electron-2.0.17.tgz#871c02eabcdfe11f7452c01b2f36510241b6de19"
+  integrity sha1-hxwC6rzf4R90UsAbLzZRAkG23hk=
   dependencies:
     "@types/node" "^8.0.24"
     electron-download "^3.0.1"
@@ -3363,7 +3353,7 @@ eslint-friendly-formatter@^4.0.1:
     strip-ansi "^4.0.0"
     text-table "^0.2.0"
 
-eslint-import-resolver-node@^0.3.1:
+eslint-import-resolver-node@^0.3.2:
   version "0.3.2"
   resolved "http://registry.npm.taobao.org/eslint-import-resolver-node/download/eslint-import-resolver-node-0.3.2.tgz#58f15fb839b8d0576ca980413476aab2472db66a"
   integrity sha1-WPFfuDm40FdsqYBBNHaqskcttmo=
@@ -3372,9 +3362,9 @@ eslint-import-resolver-node@^0.3.1:
     resolve "^1.5.0"
 
 eslint-loader@^2.0.0:
-  version "2.1.1"
-  resolved "http://registry.npm.taobao.org/eslint-loader/download/eslint-loader-2.1.1.tgz#2a9251523652430bfdd643efdb0afc1a2a89546a"
-  integrity sha1-KpJRUjZSQwv91kPv2wr8GiqJVGo=
+  version "2.1.2"
+  resolved "http://registry.npm.taobao.org/eslint-loader/download/eslint-loader-2.1.2.tgz#453542a1230d6ffac90e4e7cb9cadba9d851be68"
+  integrity sha1-RTVCoSMNb/rJDk58ucrbqdhRvmg=
   dependencies:
     loader-fs-cache "^1.0.0"
     loader-utils "^1.0.2"
@@ -3382,13 +3372,13 @@ eslint-loader@^2.0.0:
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
-eslint-module-utils@^2.2.0:
-  version "2.2.0"
-  resolved "http://registry.npm.taobao.org/eslint-module-utils/download/eslint-module-utils-2.2.0.tgz#b270362cd88b1a48ad308976ce7fa54e98411746"
-  integrity sha1-snA2LNiLGkitMIl2zn+lTphBF0Y=
+eslint-module-utils@^2.3.0:
+  version "2.3.0"
+  resolved "http://registry.npm.taobao.org/eslint-module-utils/download/eslint-module-utils-2.3.0.tgz#546178dab5e046c8b562bbb50705e2456d7bda49"
+  integrity sha1-VGF42rXgRsi1Yru1BwXiRW172kk=
   dependencies:
     debug "^2.6.8"
-    pkg-dir "^1.0.0"
+    pkg-dir "^2.0.0"
 
 eslint-plugin-html@^4.0.3:
   version "4.0.6"
@@ -3398,20 +3388,20 @@ eslint-plugin-html@^4.0.3:
     htmlparser2 "^3.8.2"
 
 eslint-plugin-import@^2.12.0:
-  version "2.14.0"
-  resolved "http://registry.npm.taobao.org/eslint-plugin-import/download/eslint-plugin-import-2.14.0.tgz#6b17626d2e3e6ad52cfce8807a845d15e22111a8"
-  integrity sha1-axdibS4+atUs/OiAeoRdFeIhEag=
+  version "2.16.0"
+  resolved "http://registry.npm.taobao.org/eslint-plugin-import/download/eslint-plugin-import-2.16.0.tgz#97ac3e75d0791c4fac0e15ef388510217be7f66f"
+  integrity sha1-l6w+ddB5HE+sDhXvOIUQIXvn9m8=
   dependencies:
     contains-path "^0.1.0"
-    debug "^2.6.8"
+    debug "^2.6.9"
     doctrine "1.5.0"
-    eslint-import-resolver-node "^0.3.1"
-    eslint-module-utils "^2.2.0"
-    has "^1.0.1"
-    lodash "^4.17.4"
-    minimatch "^3.0.3"
+    eslint-import-resolver-node "^0.3.2"
+    eslint-module-utils "^2.3.0"
+    has "^1.0.3"
+    lodash "^4.17.11"
+    minimatch "^3.0.4"
     read-pkg-up "^2.0.0"
-    resolve "^1.6.0"
+    resolve "^1.9.0"
 
 eslint-plugin-node@^6.0.1:
   version "6.0.1"
@@ -3933,12 +3923,12 @@ flora-colossus@^1.0.0:
     fs-extra "^4.0.0"
 
 flush-write-stream@^1.0.0:
-  version "1.0.3"
-  resolved "http://registry.npm.taobao.org/flush-write-stream/download/flush-write-stream-1.0.3.tgz#c5d586ef38af6097650b49bc41b55fabb19f35bd"
-  integrity sha1-xdWG7zivYJdlC0m8QbVfq7GfNb0=
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/flush-write-stream/download/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
+  integrity sha1-jdfYc6G6vCB9lOrQwuDkQnbr8ug=
   dependencies:
-    inherits "^2.0.1"
-    readable-stream "^2.0.4"
+    inherits "^2.0.3"
+    readable-stream "^2.3.6"
 
 follow-redirects@^1.0.0, follow-redirects@^1.3.0:
   version "1.6.1"
@@ -4013,15 +4003,6 @@ fs-extra@^0.30.0:
     path-is-absolute "^1.0.0"
     rimraf "^2.2.8"
 
-fs-extra@^3.0.1:
-  version "3.0.1"
-  resolved "http://registry.npm.taobao.org/fs-extra/download/fs-extra-3.0.1.tgz#3794f378c58b342ea7dbbb23095109c4b3b62291"
-  integrity sha1-N5TzeMWLNC6n27sjCVEJxLO2IpE=
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^3.0.0"
-    universalify "^0.1.0"
-
 fs-extra@^4.0.0, fs-extra@^4.0.1:
   version "4.0.3"
   resolved "http://registry.npm.taobao.org/fs-extra/download/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
@@ -4035,6 +4016,15 @@ fs-extra@^5.0.0:
   version "5.0.0"
   resolved "http://registry.npm.taobao.org/fs-extra/download/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
   integrity sha1-QU0BEM3QZwVzTQVWUsVBEmDDGr0=
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^7.0.1:
+  version "7.0.1"
+  resolved "http://registry.npm.taobao.org/fs-extra/download/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
+  integrity sha1-TxicRKoSO4lfcigE9V6iPq3DSOk=
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -4062,7 +4052,7 @@ fs.realpath@^1.0.0:
   resolved "http://registry.npm.taobao.org/fs.realpath/download/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
-fsevents@^1.2.2:
+fsevents@^1.2.7:
   version "1.2.7"
   resolved "http://registry.npm.taobao.org/fsevents/download/fsevents-1.2.7.tgz#4851b664a3783e52003b3c66eb0eee1074933aa4"
   integrity sha1-SFG2ZKN4PlIAOzxm6w7uEHSTOqQ=
@@ -4200,11 +4190,6 @@ glob@^7.0.3, glob@^7.1.2, glob@^7.1.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-global-modules-path@^2.3.0:
-  version "2.3.1"
-  resolved "http://registry.npm.taobao.org/global-modules-path/download/global-modules-path-2.3.1.tgz#e541f4c800a1a8514a990477b267ac67525b9931"
-  integrity sha1-5UH0yAChqFFKmQR3smesZ1JbmTE=
-
 global-modules@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/global-modules/download/global-modules-1.0.0.tgz#6d770f0eb523ac78164d72b5e71a8877265cc3ea"
@@ -4226,9 +4211,9 @@ global-prefix@^1.0.1:
     which "^1.2.14"
 
 globals@^11.0.1, globals@^11.1.0:
-  version "11.10.0"
-  resolved "http://registry.npm.taobao.org/globals/download/globals-11.10.0.tgz#1e09776dffda5e01816b3bb4077c8b59c24eaa50"
-  integrity sha1-Hgl3bf/aXgGBazu0B3yLWcJOqlA=
+  version "11.11.0"
+  resolved "http://registry.npm.taobao.org/globals/download/globals-11.11.0.tgz#dcf93757fa2de5486fbeed7118538adf789e9c2e"
+  integrity sha1-3Pk3V/ot5Uhvvu1xGFOK33ienC4=
 
 globals@^9.18.0:
   version "9.18.0"
@@ -4391,9 +4376,9 @@ header-case@^1.0.0:
     upper-case "^1.1.3"
 
 highlight.js@^9.3.0:
-  version "9.13.1"
-  resolved "http://registry.npm.taobao.org/highlight.js/download/highlight.js-9.13.1.tgz#054586d53a6863311168488a0f58d6c505ce641e"
-  integrity sha1-BUWG1TpoYzERaEiKD1jWxQXOZB4=
+  version "9.14.2"
+  resolved "http://registry.npm.taobao.org/highlight.js/download/highlight.js-9.14.2.tgz#efbfb22dc701406e4da406056ef8c2b70ebe5b26"
+  integrity sha1-77+yLccBQG5NpAYFbvjCtw6+WyY=
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -4709,11 +4694,6 @@ invariant@^2.2.0, invariant@^2.2.2:
   dependencies:
     loose-envify "^1.0.0"
 
-invert-kv@^1.0.0:
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/invert-kv/download/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
-  integrity sha1-EEqOSqym09jNFXqO+L+rLXo//bY=
-
 invert-kv@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/invert-kv/download/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
@@ -4735,9 +4715,9 @@ ipaddr.js@1.8.0:
   integrity sha1-6qM9bd16zo9/b+DJygRA5wZzix4=
 
 ipaddr.js@^1.5.2:
-  version "1.8.1"
-  resolved "http://registry.npm.taobao.org/ipaddr.js/download/ipaddr.js-1.8.1.tgz#fa4b79fa47fd3def5e3b159825161c0a519c9427"
-  integrity sha1-+kt5+kf9Pe9eOxWYJRYcClGclCc=
+  version "1.9.0"
+  resolved "http://registry.npm.taobao.org/ipaddr.js/download/ipaddr.js-1.9.0.tgz#37df74e430a0e47550fe54a2defe30d8acd95f65"
+  integrity sha1-N9905DCg5HVQ/lSi3v4w2KzZX2U=
 
 is-absolute-url@^2.0.0:
   version "2.1.0"
@@ -4774,13 +4754,6 @@ is-buffer@^1.0.2, is-buffer@^1.1.5:
   version "1.1.6"
   resolved "http://registry.npm.taobao.org/is-buffer/download/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha1-76ouqdqg16suoTqXsritUf776L4=
-
-is-builtin-module@^1.0.0:
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/is-builtin-module/download/is-builtin-module-1.0.0.tgz#540572d34f7ac3119f8f76c30cbc1b1e037affbe"
-  integrity sha1-VAVy0096wxGfj3bDDLwbHgN6/74=
-  dependencies:
-    builtin-modules "^1.0.0"
 
 is-callable@^1.1.4:
   version "1.1.4"
@@ -5149,13 +5122,6 @@ jsonfile@^2.1.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-jsonfile@^3.0.0:
-  version "3.0.1"
-  resolved "http://registry.npm.taobao.org/jsonfile/download/jsonfile-3.0.1.tgz#a5ecc6f65f53f662c4415c7675a0331d0992ec66"
-  integrity sha1-pezG9l9T9mLEQVx2daAzHQmS7GY=
-  optionalDependencies:
-    graceful-fs "^4.1.6"
-
 jsonfile@^4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/jsonfile/download/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
@@ -5239,13 +5205,6 @@ lazy-cache@^1.0.3:
   resolved "http://registry.npm.taobao.org/lazy-cache/download/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
 
-lcid@^1.0.0:
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/lcid/download/lcid-1.0.0.tgz#308accafa0bc483a3867b4b6f2b9506251d1b835"
-  integrity sha1-MIrMr6C8SDo4Z7S28rlQYlHRuDU=
-  dependencies:
-    invert-kv "^1.0.0"
-
 lcid@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/lcid/download/lcid-2.0.0.tgz#6ef5d2df60e52f82eb228a4c373e8d1f397253cf"
@@ -5260,11 +5219,6 @@ levn@^0.3.0, levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
-
-lightercollective@^0.1.0:
-  version "0.1.0"
-  resolved "http://registry.npm.taobao.org/lightercollective/download/lightercollective-0.1.0.tgz#70df102c530dcb8d0ccabfe6175a8d00d5f61300"
-  integrity sha1-cN8QLFMNy40Myr/mF1qNANX2EwA=
 
 load-json-file@^1.0.0:
   version "1.1.0"
@@ -5422,11 +5376,6 @@ lodash.clonedeep@^4.5.0:
   resolved "http://registry.npm.taobao.org/lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
-lodash.debounce@^4.0.8:
-  version "4.0.8"
-  resolved "http://registry.npm.taobao.org/lodash.debounce/download/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
-  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
-
 lodash.get@^4.0.0:
   version "4.4.2"
   resolved "http://registry.npm.taobao.org/lodash.get/download/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
@@ -5528,7 +5477,7 @@ lodash@^4.17.11, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, 
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha1-s56mIp72B+zYniyN8SU2iRysm40=
 
-log-symbols@^2.1.0:
+log-symbols@^2.2.0:
   version "2.2.0"
   resolved "http://registry.npm.taobao.org/log-symbols/download/log-symbols-2.2.0.tgz#5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a"
   integrity sha1-V0Dhxdbw39pK2TI7UzIQfva0xAo=
@@ -5646,13 +5595,13 @@ media-typer@0.3.0:
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
 mem@^4.0.0:
-  version "4.0.0"
-  resolved "http://registry.npm.taobao.org/mem/download/mem-4.0.0.tgz#6437690d9471678f6cc83659c00cbafcd6b0cdaf"
-  integrity sha1-ZDdpDZRxZ49syDZZwAy6/Nawza8=
+  version "4.1.0"
+  resolved "http://registry.npm.taobao.org/mem/download/mem-4.1.0.tgz#aeb9be2d21f47e78af29e4ac5978e8afa2ca5b8a"
+  integrity sha1-rrm+LSH0fnivKeSsWXjor6LKW4o=
   dependencies:
     map-age-cleaner "^0.1.1"
     mimic-fn "^1.0.0"
-    p-is-promise "^1.1.0"
+    p-is-promise "^2.0.0"
 
 memory-fs@^0.4.0, memory-fs@~0.4.1:
   version "0.4.1"
@@ -5722,7 +5671,12 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
-"mime-db@>= 1.36.0 < 2", mime-db@~1.37.0:
+"mime-db@>= 1.36.0 < 2":
+  version "1.38.0"
+  resolved "http://registry.npm.taobao.org/mime-db/download/mime-db-1.38.0.tgz#1a2aab16da9eb167b49c6e4df2d9c68d63d8e2ad"
+  integrity sha1-GiqrFtqesWe0nG5N8tnGjWPY4q0=
+
+mime-db@~1.37.0:
   version "1.37.0"
   resolved "http://registry.npm.taobao.org/mime-db/download/mime-db-1.37.0.tgz#0b6a0ce6fdbe9576e25f1f2d2fde8830dc0ad0d8"
   integrity sha1-C2oM5v2+lXbiXx8tL96IMNwK0Ng=
@@ -5982,10 +5936,10 @@ no-case@^2.2.0, no-case@^2.3.2:
   dependencies:
     lower-case "^1.1.1"
 
-node-abi@^2.0.0:
-  version "2.5.1"
-  resolved "http://registry.npm.taobao.org/node-abi/download/node-abi-2.5.1.tgz#bb17288fc3b2f68fea0ed9897c66979fd754ed47"
-  integrity sha1-uxcoj8Oy9o/qDtmJfGaXn9dU7Uc=
+node-abi@^2.7.0:
+  version "2.7.1"
+  resolved "http://registry.npm.taobao.org/node-abi/download/node-abi-2.7.1.tgz#a8997ae91176a5fbaa455b194976e32683cda643"
+  integrity sha1-qJl66RF2pfuqRVsZSXbjJoPNpkM=
   dependencies:
     semver "^5.4.1"
 
@@ -5994,7 +5948,7 @@ node-forge@0.7.5:
   resolved "http://registry.npm.taobao.org/node-forge/download/node-forge-0.7.5.tgz#6c152c345ce11c52f465c2abd957e8639cd674df"
   integrity sha1-bBUsNFzhHFL0ZcKr2VfoY5zWdN8=
 
-node-gyp@^3.6.0:
+node-gyp@^3.8.0:
   version "3.8.0"
   resolved "http://registry.npm.taobao.org/node-gyp/download/node-gyp-3.8.0.tgz#540304261c330e80d0d5edce253a68cb3964218c"
   integrity sha1-VAMEJhwzDoDQ1e3OJTpoyzlkIYw=
@@ -6093,12 +6047,12 @@ nopt@~1.0.10:
     abbrev "1"
 
 normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
-  version "2.4.0"
-  resolved "http://registry.npm.taobao.org/normalize-package-data/download/normalize-package-data-2.4.0.tgz#12f95a307d58352075a04907b84ac8be98ac012f"
-  integrity sha1-EvlaMH1YNSB1oEkHuErIvpisAS8=
+  version "2.5.0"
+  resolved "http://registry.npm.taobao.org/normalize-package-data/download/normalize-package-data-2.5.0.tgz#e66db1838b200c1dfc233225d12cb36520e234a8"
+  integrity sha1-5m2xg4sgDB38IzIl0SyzZSDiNKg=
   dependencies:
     hosted-git-info "^2.1.4"
-    is-builtin-module "^1.0.0"
+    resolve "^1.10.0"
     semver "2 || 3 || 4 || 5"
     validate-npm-package-license "^3.0.1"
 
@@ -6108,6 +6062,11 @@ normalize-path@^2.1.1:
   integrity sha1-GrKLVW4Zg2Oowab35vogE3/mrtk=
   dependencies:
     remove-trailing-separator "^1.0.1"
+
+normalize-path@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/normalize-path/download/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
+  integrity sha1-Dc1p/yOhybEf0JeDFmRKA4ghamU=
 
 normalize-range@^0.1.2:
   version "0.1.2"
@@ -6125,14 +6084,14 @@ normalize-url@^1.4.0:
     sort-keys "^1.0.0"
 
 npm-bundled@^1.0.1:
-  version "1.0.5"
-  resolved "http://registry.npm.taobao.org/npm-bundled/download/npm-bundled-1.0.5.tgz#3c1732b7ba936b3a10325aef616467c0ccbcc979"
-  integrity sha1-PBcyt7qTazoQMlrvYWRnwMy8yXk=
+  version "1.0.6"
+  resolved "http://registry.npm.taobao.org/npm-bundled/download/npm-bundled-1.0.6.tgz#e7ba9aadcef962bb61248f91721cd932b3fe6bdd"
+  integrity sha1-57qarc75YrthJI+RchzZMrP+a90=
 
 npm-packlist@^1.1.6:
-  version "1.2.0"
-  resolved "http://registry.npm.taobao.org/npm-packlist/download/npm-packlist-1.2.0.tgz#55a60e793e272f00862c7089274439a4cc31fc7f"
-  integrity sha1-VaYOeT4nLwCGLHCJJ0Q5pMwx/H8=
+  version "1.3.0"
+  resolved "http://registry.npm.taobao.org/npm-packlist/download/npm-packlist-1.3.0.tgz#7f01e8e44408341379ca98cfd756e7b29bd2626c"
+  integrity sha1-fwHo5EQINBN5ypjP11bnspvSYmw=
   dependencies:
     ignore-walk "^3.0.1"
     npm-bundled "^1.0.1"
@@ -6209,9 +6168,9 @@ object-hash@^1.1.4:
   integrity sha1-/eRSCYqVHLFF8Dm7fUVUSd3BJt8=
 
 object-keys@^1.0.12:
-  version "1.0.12"
-  resolved "http://registry.npm.taobao.org/object-keys/download/object-keys-1.0.12.tgz#09c53855377575310cca62f55bb334abff7b3ed2"
-  integrity sha1-CcU4VTd1dTEMymL1W7M0q/97PtI=
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/object-keys/download/object-keys-1.1.0.tgz#11bd22348dd2e096a045ab06f6c85bcc340fa032"
+  integrity sha1-Eb0iNI3S4JagRasG9shbzDQPoDI=
 
 object-keys@~0.4.0:
   version "0.4.0"
@@ -6295,15 +6254,17 @@ optionator@^0.8.2:
     type-check "~0.3.2"
     wordwrap "~1.0.0"
 
-ora@^1.2.0:
-  version "1.4.0"
-  resolved "http://registry.npm.taobao.org/ora/download/ora-1.4.0.tgz#884458215b3a5d4097592285f93321bb7a79e2e5"
-  integrity sha1-iERYIVs6XUCXWSKF+TMhu3p54uU=
+ora@^3.0.0:
+  version "3.1.0"
+  resolved "http://registry.npm.taobao.org/ora/download/ora-3.1.0.tgz#dbedd8c03b5d017fb67083e87ee52f5ec89823ed"
+  integrity sha1-2+3YwDtdAX+2cIPofuUvXsiYI+0=
   dependencies:
-    chalk "^2.1.0"
+    chalk "^2.4.2"
     cli-cursor "^2.1.0"
-    cli-spinners "^1.0.1"
-    log-symbols "^2.1.0"
+    cli-spinners "^1.3.1"
+    log-symbols "^2.2.0"
+    strip-ansi "^5.0.0"
+    wcwidth "^1.0.1"
 
 original@^1.0.0:
   version "1.0.2"
@@ -6321,13 +6282,6 @@ os-homedir@^1.0.0:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/os-homedir/download/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
   integrity sha1-/7xJiDNuDoM94MFox+8VISGqf7M=
-
-os-locale@^1.4.0:
-  version "1.4.0"
-  resolved "http://registry.npm.taobao.org/os-locale/download/os-locale-1.4.0.tgz#20f9f17ae29ed345e8bde583b13d2009803c14d9"
-  integrity sha1-IPnxeuKe00XoveWDsT0gCYA8FNk=
-  dependencies:
-    lcid "^1.0.0"
 
 os-locale@^3.0.0:
   version "3.1.0"
@@ -6361,10 +6315,10 @@ p-finally@^1.0.0:
   resolved "http://registry.npm.taobao.org/p-finally/download/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
   integrity sha1-P7z7FbiZpEEjs0ttzBi3JDNqLK4=
 
-p-is-promise@^1.1.0:
-  version "1.1.0"
-  resolved "http://registry.npm.taobao.org/p-is-promise/download/p-is-promise-1.1.0.tgz#9c9456989e9f6588017b0434d56097675c3da05e"
-  integrity sha1-nJRWmJ6fZYgBewQ01WCXZ1w9oF4=
+p-is-promise@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/p-is-promise/download/p-is-promise-2.0.0.tgz#7554e3d572109a87e1f3f53f6a7d85d1b194f4c5"
+  integrity sha1-dVTj1XIQmofh8/U/an2F0bGU9MU=
 
 p-limit@^1.0.0, p-limit@^1.1.0:
   version "1.3.0"
@@ -6952,10 +6906,10 @@ postcss@^6.0.1:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.7:
-  version "7.0.13"
-  resolved "http://registry.npm.taobao.org/postcss/download/postcss-7.0.13.tgz#42bf716413e8f1c786ab71dc6e722b3671b16708"
-  integrity sha1-Qr9xZBPo8ceGq3HcbnIrNnGxZwg=
+postcss@^7.0.14:
+  version "7.0.14"
+  resolved "http://registry.npm.taobao.org/postcss/download/postcss-7.0.14.tgz#4527ed6b1ca0d82c53ce5ec1a2041c2346bbd6e5"
+  integrity sha1-RSftaxyg2CxTzl7BogQcI0a71uU=
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
@@ -6971,10 +6925,10 @@ prepend-http@^1.0.0:
   resolved "http://registry.npm.taobao.org/prepend-http/download/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
-prettier@1.13.7:
-  version "1.13.7"
-  resolved "http://registry.npm.taobao.org/prettier/download/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
-  integrity sha1-hQ87iveEpJpuotLqp+0UKKNLcoE=
+prettier@1.16.3:
+  version "1.16.3"
+  resolved "http://registry.npm.taobao.org/prettier/download/prettier-1.16.3.tgz#8c62168453badef702f34b45b6ee899574a6a65d"
+  integrity sha1-jGIWhFO63vcC80tFtu6JlXSmpl0=
 
 pretty-bytes@^1.0.2:
   version "1.0.4"
@@ -7343,7 +7297,7 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@~2.3.6:
+"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@~2.3.6:
   version "2.3.6"
   resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   integrity sha1-sRwn2IuP8fvgcGQ8+UsMea4bCq8=
@@ -7385,7 +7339,7 @@ readable-stream@^3.0.6:
     string_decoder "^1.1.1"
     util-deprecate "^1.0.1"
 
-readdirp@^2.0.0:
+readdirp@^2.2.1:
   version "2.2.1"
   resolved "http://registry.npm.taobao.org/readdirp/download/readdirp-2.2.1.tgz#0e87622a3325aa33e892285caf8b4e846529a525"
   integrity sha1-DodiKjMlqjPokihcr4tOhGUppSU=
@@ -7607,10 +7561,10 @@ resolve-url@^0.2.1:
   resolved "http://registry.npm.taobao.org/resolve-url/download/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
 
-resolve@^1.1.6, resolve@^1.3.3, resolve@^1.5.0, resolve@^1.6.0:
-  version "1.9.0"
-  resolved "http://registry.npm.taobao.org/resolve/download/resolve-1.9.0.tgz#a14c6fdfa8f92a7df1d996cb7105fa744658ea06"
-  integrity sha1-oUxv36j5Kn3x2ZbLcQX6dEZY6gY=
+resolve@^1.1.6, resolve@^1.10.0, resolve@^1.3.3, resolve@^1.5.0, resolve@^1.9.0:
+  version "1.10.0"
+  resolved "http://registry.npm.taobao.org/resolve/download/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
+  integrity sha1-O9qur0XMB/N1ZW39LlTtCBCxAbo=
   dependencies:
     path-parse "^1.0.6"
 
@@ -7683,12 +7637,12 @@ rx-lite@*, rx-lite@^4.0.8:
   resolved "http://registry.npm.taobao.org/rx-lite/download/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
   integrity sha1-Cx4Rr4vESDbwSmQH6S2kJGe3lEQ=
 
-rxjs@^5.1.1:
-  version "5.5.12"
-  resolved "http://registry.npm.taobao.org/rxjs/download/rxjs-5.5.12.tgz#6fa61b8a77c3d793dbaf270bee2f43f652d741cc"
-  integrity sha1-b6YbinfD15PbrycL7i9D9lLXQcw=
+rxjs@^6.3.1:
+  version "6.4.0"
+  resolved "http://registry.npm.taobao.org/rxjs/download/rxjs-6.4.0.tgz#f3bb0fe7bda7fb69deac0c16f17b50b0b8790504"
+  integrity sha1-87sP572n+2nerAwW8XtQsLh5BQQ=
   dependencies:
-    symbol-observable "1.0.1"
+    tslib "^1.9.0"
 
 safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
@@ -7724,7 +7678,7 @@ sax@^1.2.4, sax@~1.2.1:
   resolved "http://registry.npm.taobao.org/sax/download/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
 
-schema-utils@^0.4.4, schema-utils@^0.4.5:
+schema-utils@^0.4.5:
   version "0.4.7"
   resolved "http://registry.npm.taobao.org/schema-utils/download/schema-utils-0.4.7.tgz#ba74f597d2be2ea880131746ee17d0a093c68187"
   integrity sha1-unT1l9K+LqiAExdG7hfQoJPGgYc=
@@ -7989,7 +7943,7 @@ source-map-support@^0.4.15:
   dependencies:
     source-map "^0.5.6"
 
-source-map-support@~0.5.6:
+source-map-support@~0.5.9:
   version "0.5.10"
   resolved "http://registry.npm.taobao.org/source-map-support/download/source-map-support-0.5.10.tgz#2214080bc9d51832511ee2bab96e3c2f9353120c"
   integrity sha1-IhQIC8nVGDJRHuK6uW48L5NTEgw=
@@ -8026,19 +7980,14 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   resolved "http://registry.npm.taobao.org/source-map/download/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha1-dHIq8y6WFOnCh6jQu95IteLxomM=
 
-source-map@^0.7.3:
-  version "0.7.3"
-  resolved "http://registry.npm.taobao.org/source-map/download/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
-  integrity sha1-UwL4FpAxc1ImVECS5kmB91F1A4M=
-
-spawn-rx@^2.0.10:
-  version "2.0.12"
-  resolved "http://registry.npm.taobao.org/spawn-rx/download/spawn-rx-2.0.12.tgz#b6285294499426089beea0c3c1ec32d7fc57a376"
-  integrity sha1-tihSlEmUJgib7qDDwewy1/xXo3Y=
+spawn-rx@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/spawn-rx/download/spawn-rx-3.0.0.tgz#1d33511e13ec26337da51d78630e08beb57a6767"
+  integrity sha1-HTNRHhPsJjN9pR14Yw4IvrV6Z2c=
   dependencies:
     debug "^2.5.1"
     lodash.assign "^4.2.0"
-    rxjs "^5.1.1"
+    rxjs "^6.3.1"
 
 spdx-correct@^3.0.0:
   version "3.1.0"
@@ -8107,9 +8056,9 @@ sprintf-js@~1.0.2:
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
 sshpk@^1.7.0:
-  version "1.16.0"
-  resolved "http://registry.npm.taobao.org/sshpk/download/sshpk-1.16.0.tgz#1d4963a2fbffe58050aa9084ca20be81741c07de"
-  integrity sha1-HUljovv/5YBQqpCEyiC+gXQcB94=
+  version "1.16.1"
+  resolved "http://registry.npm.taobao.org/sshpk/download/sshpk-1.16.1.tgz#fb661c0bef29b39db40769ee39fa70093d6f6877"
+  integrity sha1-+2YcC+8ps520B2nuOfpwCT1vaHc=
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"
@@ -8154,9 +8103,9 @@ statuses@~1.4.0:
   integrity sha1-u3PURtonlhBu/MG2AaJT1sRr0Ic=
 
 stream-browserify@^2.0.1:
-  version "2.0.1"
-  resolved "http://registry.npm.taobao.org/stream-browserify/download/stream-browserify-2.0.1.tgz#66266ee5f9bdb9940a4e4514cafb43bb71e5c9db"
-  integrity sha1-ZiZu5fm9uZQKTkUUyvtDu3Hlyds=
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/stream-browserify/download/stream-browserify-2.0.2.tgz#87521d38a44aa7ee91ce1cd2a47df0cb49dd660b"
+  integrity sha1-h1IdOKRKp+6RzhzSpH3wy0ndZgs=
   dependencies:
     inherits "~2.0.1"
     readable-stream "^2.0.2"
@@ -8190,7 +8139,7 @@ strict-uri-encode@^1.0.0:
   resolved "http://registry.npm.taobao.org/strict-uri-encode/download/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
   integrity sha1-J5siXfHVgrH1TmWt3UNS4Y+qBxM=
 
-string-width@^1.0.1, string-width@^1.0.2:
+string-width@^1.0.1:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/string-width/download/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
   integrity sha1-EYvfW4zcUaKn5w0hHgfisLmxB9M=
@@ -8239,6 +8188,13 @@ strip-ansi@^4.0.0:
   integrity sha1-qEeQIusaw2iocTibY1JixQXuNo8=
   dependencies:
     ansi-regex "^3.0.0"
+
+strip-ansi@^5.0.0:
+  version "5.0.0"
+  resolved "http://registry.npm.taobao.org/strip-ansi/download/strip-ansi-5.0.0.tgz#f78f68b5d0866c20b2c9b8c61b5298508dc8756f"
+  integrity sha1-949otdCGbCCyybjGG1KYUI3IdW8=
+  dependencies:
+    ansi-regex "^4.0.0"
 
 strip-bom@^2.0.0:
   version "2.0.0"
@@ -8360,11 +8316,6 @@ swap-case@^1.1.0:
     lower-case "^1.1.1"
     upper-case "^1.1.1"
 
-symbol-observable@1.0.1:
-  version "1.0.1"
-  resolved "http://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
-  integrity sha1-g0D8RwLDEi310iKI+IKD9RPT/dQ=
-
 table@4.0.2:
   version "4.0.2"
   resolved "http://registry.npm.taobao.org/table/download/table-4.0.2.tgz#a33447375391e766ad34d3486e6e2aedc84d2e36"
@@ -8405,27 +8356,27 @@ tar@^4:
     yallist "^3.0.2"
 
 terser-webpack-plugin@^1.1.0:
-  version "1.2.1"
-  resolved "http://registry.npm.taobao.org/terser-webpack-plugin/download/terser-webpack-plugin-1.2.1.tgz#7545da9ae5f4f9ae6a0ac961eb46f5e7c845cc26"
-  integrity sha1-dUXamuX0+a5qCslh60b158hFzCY=
+  version "1.2.2"
+  resolved "http://registry.npm.taobao.org/terser-webpack-plugin/download/terser-webpack-plugin-1.2.2.tgz#9bff3a891ad614855a7dde0d707f7db5a927e3d9"
+  integrity sha1-m/86iRrWFIVafd4NcH99takn49k=
   dependencies:
     cacache "^11.0.2"
     find-cache-dir "^2.0.0"
     schema-utils "^1.0.0"
     serialize-javascript "^1.4.0"
     source-map "^0.6.1"
-    terser "^3.8.1"
+    terser "^3.16.1"
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
 
-terser@^3.8.1:
-  version "3.14.1"
-  resolved "http://registry.npm.taobao.org/terser/download/terser-3.14.1.tgz#cc4764014af570bc79c79742358bd46926018a32"
-  integrity sha1-zEdkAUr1cLx5x5dCNYvUaSYBijI=
+terser@^3.16.1:
+  version "3.16.1"
+  resolved "http://registry.npm.taobao.org/terser/download/terser-3.16.1.tgz#5b0dd4fa1ffd0b0b43c2493b2c364fd179160493"
+  integrity sha1-Ww3U+h/9CwtDwkk7LDZP0XkWBJM=
   dependencies:
     commander "~2.17.1"
     source-map "~0.6.1"
-    source-map-support "~0.5.6"
+    source-map-support "~0.5.9"
 
 text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
@@ -8706,7 +8657,7 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
-upath@^1.0.5:
+upath@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/upath/download/upath-1.1.0.tgz#35256597e46a581db4793d0ce47fa9aebfc9fabd"
   integrity sha1-NSVll+RqWB20eT0M5H+prr/J+r0=
@@ -8874,9 +8825,9 @@ vue-eslint-parser@^2.0.3:
     lodash "^4.17.4"
 
 vue-hot-reload-api@^2.3.0:
-  version "2.3.1"
-  resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
-  integrity sha1-stPZVAKoEWAjgHg+pPVm64dVaaI=
+  version "2.3.2"
+  resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.2.tgz#1fcc1495effe08a790909b46bf7b5c4cfeb6f21b"
+  integrity sha1-H8wUle/+CKeQkJtGv3tcTP628hs=
 
 vue-html-loader@^1.2.4:
   version "1.2.4"
@@ -8890,11 +8841,11 @@ vue-html-loader@^1.2.4:
     object-assign "^4.1.0"
 
 vue-loader@^15.2.4:
-  version "15.5.1"
-  resolved "http://registry.npm.taobao.org/vue-loader/download/vue-loader-15.5.1.tgz#e005d5fc2481a55a19910f0dcf434206d68acc2a"
-  integrity sha1-4AXV/CSBpVoZkQ8Nz0NCBtaKzCo=
+  version "15.6.2"
+  resolved "http://registry.npm.taobao.org/vue-loader/download/vue-loader-15.6.2.tgz#892741d96260936ff69e892f72ec361ba4d100d2"
+  integrity sha1-iSdB2WJgk2/2nokvcuw2G6TRANI=
   dependencies:
-    "@vue/component-compiler-utils" "^2.4.0"
+    "@vue/component-compiler-utils" "^2.5.1"
     hash-sum "^1.0.2"
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
@@ -8914,22 +8865,22 @@ vue-style-loader@^4.1.0:
     loader-utils "^1.0.2"
 
 vue-template-compiler@^2.5.16:
-  version "2.5.22"
-  resolved "http://registry.npm.taobao.org/vue-template-compiler/download/vue-template-compiler-2.5.22.tgz#c3d3c02c65f1908205c4fbd3b0ef579e51239955"
-  integrity sha1-w9PALGXxkIIFxPvTsO9XnlEjmVU=
+  version "2.6.6"
+  resolved "http://registry.npm.taobao.org/vue-template-compiler/download/vue-template-compiler-2.6.6.tgz#a807acbf3d51971d3721d75ecb1b927b517c1a02"
+  integrity sha1-qAesvz1Rlx03IddeyxuSe1F8GgI=
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
 
-vue-template-es2015-compiler@^1.6.0:
-  version "1.8.1"
-  resolved "http://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.8.1.tgz#e2ec4f42d16b6c712e61899c6b20bcdb1df128ca"
-  integrity sha1-4uxPQtFrbHEuYYmcayC82x3xKMo=
+vue-template-es2015-compiler@^1.8.2:
+  version "1.8.2"
+  resolved "http://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.8.2.tgz#dd73e80ba58bb65dd7a8aa2aeef6089cf6116f2a"
+  integrity sha1-3XPoC6WLtl3XqKoq7vYInPYRbyo=
 
 vue@^2.5.16:
-  version "2.5.22"
-  resolved "http://registry.npm.taobao.org/vue/download/vue-2.5.22.tgz#3bf88041af08b8539c37b268b70ca79245e9cc30"
-  integrity sha1-O/iAQa8IuFOcN7JotwynkkXpzDA=
+  version "2.6.6"
+  resolved "http://registry.npm.taobao.org/vue/download/vue-2.6.6.tgz#dde41e483c11c46a7bf523909f4f2f816ab60d25"
+  integrity sha1-3eQeSDwRxGp79SOQn08vgWq2DSU=
 
 vuex-electron@^1.0.0:
   version "1.0.3"
@@ -8960,20 +8911,25 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
+wcwidth@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/wcwidth/download/wcwidth-1.0.1.tgz#f0b0dcf915bc5ff1528afadb2c0e17b532da2fe8"
+  integrity sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
+  dependencies:
+    defaults "^1.0.3"
+
 webpack-cli@^3.0.8:
-  version "3.2.1"
-  resolved "http://registry.npm.taobao.org/webpack-cli/download/webpack-cli-3.2.1.tgz#779c696c82482491f0803907508db2e276ed3b61"
-  integrity sha1-d5xpbIJIJJHwgDkHUI2y4nbtO2E=
+  version "3.2.3"
+  resolved "http://registry.npm.taobao.org/webpack-cli/download/webpack-cli-3.2.3.tgz#13653549adfd8ccd920ad7be1ef868bacc22e346"
+  integrity sha1-E2U1Sa39jM2SCte+Hvhouswi40Y=
   dependencies:
     chalk "^2.4.1"
     cross-spawn "^6.0.5"
     enhanced-resolve "^4.1.0"
     findup-sync "^2.0.0"
     global-modules "^1.0.0"
-    global-modules-path "^2.3.0"
     import-local "^2.0.0"
     interpret "^1.1.0"
-    lightercollective "^0.1.0"
     loader-utils "^1.1.0"
     supports-color "^5.5.0"
     v8-compile-cache "^2.0.2"
@@ -9059,9 +9015,9 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0, webpack-sources@^1.3.0:
     source-map "~0.6.1"
 
 webpack@^4.15.1:
-  version "4.29.0"
-  resolved "http://registry.npm.taobao.org/webpack/download/webpack-4.29.0.tgz#f2cfef83f7ae404ba889ff5d43efd285ca26e750"
-  integrity sha1-8s/vg/euQEuoif9dQ+/Shcom51A=
+  version "4.29.3"
+  resolved "http://registry.npm.taobao.org/webpack/download/webpack-4.29.3.tgz#e0b406a7b4201ed5e4fb4f84fd7359f9a7db4647"
+  integrity sha1-4LQGp7QgHtXk+0+E/XNZ+afbRkc=
   dependencies:
     "@webassemblyjs/ast" "1.7.11"
     "@webassemblyjs/helper-module-context" "1.7.11"
@@ -9082,7 +9038,7 @@ webpack@^4.15.1:
     mkdirp "~0.5.0"
     neo-async "^2.5.0"
     node-libs-browser "^2.0.0"
-    schema-utils "^0.4.4"
+    schema-utils "^1.0.0"
     tapable "^1.1.0"
     terser-webpack-plugin "^1.1.0"
     watchpack "^1.5.0"
@@ -9110,11 +9066,6 @@ whet.extend@~0.9.9:
   version "0.9.9"
   resolved "http://registry.npm.taobao.org/whet.extend/download/whet.extend-0.9.9.tgz#f877d5bf648c97e5aa542fadc16d6a259b9c11a1"
   integrity sha1-+HfVv2SMl+WqVC+twW1qJZucEaE=
-
-which-module@^1.0.0:
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/which-module/download/which-module-1.0.0.tgz#bba63ca861948994ff307736089e3b96026c2a4f"
-  integrity sha1-u6Y8qGGUiZT/MHc2CJ47lgJsKk8=
 
 which-module@^2.0.0:
   version "2.0.0"
@@ -9187,9 +9138,9 @@ wrappy@1:
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
 write-file-atomic@^2.3.0:
-  version "2.3.0"
-  resolved "http://registry.npm.taobao.org/write-file-atomic/download/write-file-atomic-2.3.0.tgz#1ff61575c2e2a4e8e510d6fa4e243cce183999ab"
-  integrity sha1-H/YVdcLipOjlENb6TiQ8zhg5mas=
+  version "2.4.2"
+  resolved "http://registry.npm.taobao.org/write-file-atomic/download/write-file-atomic-2.4.2.tgz#a7181706dfba17855d221140a9c06e15fcdd87b9"
+  integrity sha1-pxgXBt+6F4VdIhFAqcBuFfzdh7k=
   dependencies:
     graceful-fs "^4.1.11"
     imurmurhash "^0.1.4"
@@ -9239,11 +9190,6 @@ xtend@~2.1.1:
   dependencies:
     object-keys "~0.4.0"
 
-y18n@^3.2.1:
-  version "3.2.1"
-  resolved "http://registry.npm.taobao.org/y18n/download/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
-  integrity sha1-bRX7qITAhnnA136I53WegR4H+kE=
-
 "y18n@^3.2.1 || ^4.0.0", y18n@^4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/y18n/download/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
@@ -9274,13 +9220,6 @@ yargs-parser@^11.1.1:
     camelcase "^5.0.0"
     decamelize "^1.2.0"
 
-yargs-parser@^5.0.0:
-  version "5.0.0"
-  resolved "http://registry.npm.taobao.org/yargs-parser/download/yargs-parser-5.0.0.tgz#275ecf0d7ffe05c77e64e7c86e4cd94bf0e1228a"
-  integrity sha1-J17PDX/+Bcd+ZOfIbkzZS/DhIoo=
-  dependencies:
-    camelcase "^3.0.0"
-
 yargs@12.0.2:
   version "12.0.2"
   resolved "http://registry.npm.taobao.org/yargs/download/yargs-12.0.2.tgz#fe58234369392af33ecbef53819171eff0f5aadc"
@@ -9299,7 +9238,7 @@ yargs@12.0.2:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^10.1.0"
 
-yargs@^12.0.4:
+yargs@^12.0.4, yargs@^12.0.5:
   version "12.0.5"
   resolved "http://registry.npm.taobao.org/yargs/download/yargs-12.0.5.tgz#05f5997b609647b64f66b81e3b4b10a368e7ad13"
   integrity sha1-BfWZe2CWR7ZPZrgeO0sQo2jnrRM=
@@ -9316,25 +9255,6 @@ yargs@^12.0.4:
     which-module "^2.0.0"
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
-
-yargs@^7.0.2:
-  version "7.1.0"
-  resolved "http://registry.npm.taobao.org/yargs/download/yargs-7.1.0.tgz#6ba318eb16961727f5d284f8ea003e8d6154d0c8"
-  integrity sha1-a6MY6xaWFyf10oT46gA+jWFU0Mg=
-  dependencies:
-    camelcase "^3.0.0"
-    cliui "^3.2.0"
-    decamelize "^1.1.1"
-    get-caller-file "^1.0.1"
-    os-locale "^1.4.0"
-    read-pkg-up "^1.0.1"
-    require-directory "^2.1.1"
-    require-main-filename "^1.0.1"
-    set-blocking "^2.0.0"
-    string-width "^1.0.2"
-    which-module "^1.0.0"
-    y18n "^3.2.1"
-    yargs-parser "^5.0.0"
 
 yargs@~3.10.0:
   version "3.10.0"
