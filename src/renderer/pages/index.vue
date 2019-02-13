@@ -2,6 +2,7 @@
 .page.page-index
   .label
     input.input(
+      ref="input",
       type="text",
       placeholder="输入 UID 并回车",
       v-model="uid",
@@ -12,10 +13,29 @@
     :class="{ 'message--error': error }"
     v-show="msg"
   ) {{ error || msg }}
-  .aplayer(
-    ref="player",
-    v-show="isLoad"
-  ) Loading
+  .audio(
+    :class="{ 'audio--loading': isWait }",
+    v-show="isLoad || isWait"
+  )
+    .aplayer(
+      ref="player",
+      v-show="isLoad"
+    )
+    svg.circular(
+      viewBox="0 0 36 36",
+      v-show="isWait"
+    )
+      path.circle-bg(
+        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+      )
+      path.circle(
+        :stroke-dasharray="`${percentage}, 100`",
+        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+      )
+      text.percentage(
+        x="18",
+        y="21"
+      ) {{ percentage ? `${percentage}%` : '--' }}
 </template>
 
 <script>
@@ -25,7 +45,7 @@ import APlayer from 'aplayer'
 import Mousetrap from 'mousetrap'
 import qs from 'qs'
 
-import { get, size, map, indexOf } from 'lodash'
+import { get, size, map, indexOf, round, replace } from 'lodash'
 import { format } from 'date-fns'
 
 export default {
@@ -35,6 +55,7 @@ export default {
       isLoad: false,
       isWait: false,
       showHistory: false,
+      percentage: 0,
       uid: '',
       player: null,
       msg: '',
@@ -106,14 +127,31 @@ export default {
       })
 
       const data = get(res, 'data')
+      const nick = replace(get(data, 'nick'), /\[em\].*?\[\/em\]/, '')
+      const time = format(get(data, 'ctime') * 1000, 'YYYY/MM/DD HH:mm:ss')
       return {
-        title: data.song_name,
-        author: `${data.nick} - ${format(
-          data.ctime * 1000,
-          'YYYY/MM/DD HH:mm:ss'
-        )}`,
-        url: data.playurl,
-        pic: data.cover
+        ksongmid: get(data, 'ksong_mid'),
+        name: get(data, 'song_name'),
+        artist: `${nick} (${time})`,
+        url: get(data, 'playurl'),
+        cover: get(data, 'cover')
+      }
+    },
+    /**
+     * 获取歌词
+     */
+    async getLyric (ksongmid) {
+      const res = await this.query('https://kg.qq.com/cgi/fcg_lyric', {
+        format: 'jsonp',
+        inCharset: 'utf8',
+        outCharset: 'utf-8',
+        callback: 'kg',
+        ksongmid: ksongmid
+      })
+
+      const data = get(res, 'data')
+      if (data) {
+        return data.lyric
       }
     },
     /**
@@ -126,6 +164,7 @@ export default {
       }
 
       this.error = ''
+      this.isLoad = false
       this.isWait = true
 
       if (!uid) {
@@ -134,6 +173,7 @@ export default {
         return
       }
 
+      this.percentage = 0
       this.msg = '加载歌单中...'
 
       const ids = await this.getIds(uid, 1)
@@ -147,8 +187,12 @@ export default {
 
       for (const id of ids) {
         const data = await this.getDetail(id)
+        const ksongmid = get(data, 'ksongmid')
+        const lrc = await this.getLyric(ksongmid)
+        data.lrc = lrc || '[00:00.00] 暂无歌词'
+        this.percentage = round(((indexOf(ids, id) + 1) / size(ids)) * 100)
         this.msg = `加载歌曲 (${indexOf(ids, id) + 1}/${size(ids)}) ${
-          data.title
+          data.name
         }`
         this.dataList.push(data)
       }
@@ -169,15 +213,22 @@ export default {
      */
     render () {
       this.player = new APlayer({
-        element: this.$refs.player,
-        autoplay: true,
-        showlrc: false,
+        container: this.$refs.player,
+        volume: 0.8,
+        lrcType: 1,
         mutex: true,
+        mini: false,
+        autoplay: true,
         preload: 'metadata',
-        mode: 'circulation',
-        listmaxheight: '206px',
-        music: this.dataList
+        loop: 'all',
+        order: 'list',
+        listFolded: false,
+        listMaxHeight: '262px',
+        audio: this.dataList
       })
+
+      this.$refs.input.blur()
+      this.$refs.player.classList.remove('aplayer-withlrc')
 
       const el = document.querySelector('.aplayer-music')
       const span = document.createElement('span')
@@ -192,7 +243,12 @@ export default {
       this.player.on('canplay', () => {
         const current = this.player.list.audios[this.player.list.index]
         link.href = current.url
-        link.download = `${current.title}-${current.author}`
+        link.download = `${current.name}-${current.artist}`
+      })
+
+      this.player.on('listswitch', () => {
+        const lrcEl = document.querySelector('.aplayer-lrc-contents')
+        lrcEl.style = `transform:translateY(0)`
       })
 
       this.bindKey()
@@ -228,9 +284,10 @@ export default {
 
 <style lang="stylus">
 .page-index
-  padding 10px
+  display flex
+  flex-direction column
   .label
-    padding 3px
+    padding 9px
     background #eee
     border-radius 3px
     .input
@@ -249,26 +306,90 @@ export default {
         border-color #bbb
       &::placeholder
         color #ccc
+      &[readonly]
+        opacity .65
+        cursor not-allowed
   .message
     font-size 12px
     height 30px
     line-height 30px
     padding 0 12px
+    margin-top -9px
     text-align center
     color #c79a2a
     background #eee
     border-radius 0 0 3px 3px
     &--error
       color #d03a3a
+  .audio
+    flex 1
+    display flex
+    &--loading
+      align-items center
+      justify-content center
+  .circular
+    width 80px
+    height 80px
+    .circle-bg
+      fill none
+      stroke #eee
+      stroke-width 3.8
+    .circle
+      fill none
+      stroke #3c9ee5
+      stroke-width 2.8
+      stroke-linecap round
+      animation progress 1s ease-out forwards
+      @keyframes progress
+        0%
+          stroke-dasharray 0 100
+    .percentage
+      fill #aaa
+      font-size .5em
+      text-anchor middle
   .aplayer
-    margin 12px 0 0 0 !important
-    box-shadow none !important
+    flex 1
+    padding-right 200px
+    margin 0 !important
+    box-shadow none
+    &-body
+      position initial
+      padding 9px
     &-info
-      margin-bottom 20px
+      display flex
+      flex-direction column
+      justify-content space-between
+      padding 0 5px
       border-bottom 0 !important
+    &-lrc
+      display block
+      position absolute
+      right 0
+      top 0
+      bottom 0
+      width 200px
+      height 100%
+      margin auto
+      border-left 5px solid #eee
+      &-contents
+        position absolute
+        left 0
+        top 0
+        bottom 0
+        margin auto
+        height 16px
+        p
+          padding 0 10px !important
+      &-current
+        font-weight bold
+      &:before,
+      &:after
+        height 30px
     &-music
       display flex
       align-items center
+    &-author
+      white-space pre-wrap
     &-link
       font-size 12px
       color #666
@@ -279,7 +400,15 @@ export default {
         text-decoration none
         &:hover
           color blue
+    &-icon
+      &-order,
+      &-loop
+        display inline !important
+      &-menu,
+      &-lrc
+        display none !important
     &-list
+      display block !important
       overflow auto !important
       &::-webkit-scrollbar
         display none
