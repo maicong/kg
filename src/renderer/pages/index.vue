@@ -1,14 +1,26 @@
 <template lang="pug">
 .page.page-index
-  .label
+  .label(
+    @mouseover="isHover = true",
+    @mouseout="isHover = false"
+  )
     input.input(
       ref="input",
       type="text",
       placeholder="输入 UID 并回车",
       v-model="uid",
       :readonly="isWait",
+      @focus="onFocus()",
+      @blur="onBlur()",
       @keyup.enter="loader(uid)"
     )
+    ul.history(
+      :class="{ 'history--active': isShowHistory }"
+    )
+      li.history-item(
+        v-for="uid of uidList",
+        @click="changeUid(uid)"
+      ) {{ uid }}
   .message(
     :class="{ 'message--error': error }"
     v-show="msg"
@@ -44,8 +56,9 @@ import 'aplayer/dist/APlayer.min.css'
 import APlayer from 'aplayer'
 import Mousetrap from 'mousetrap'
 import qs from 'qs'
+import sessionstorage from 'sessionstorage'
 
-import { get, size, map, indexOf, round, replace } from 'lodash'
+import { get, size, map, indexOf, includes, round, replace } from 'lodash'
 import { format } from 'date-fns'
 
 export default {
@@ -54,17 +67,45 @@ export default {
     return {
       isLoad: false,
       isWait: false,
-      showHistory: false,
+      isHover: false,
+      isShowHistory: false,
       percentage: 0,
-      uid: '',
+      uid: this.ssGet('__lastuid'),
       player: null,
       msg: '',
       error: '',
-      histories: [],
+      uidList: this.ssGet('__uidlist') || [],
       dataList: []
     }
   },
+  mounted () {
+    if (this.uid) {
+      this.loader(this.uid)
+    }
+  },
   methods: {
+    /**
+     * JSON
+     */
+    json (data, type) {
+      try {
+        return JSON[type](data)
+      } catch (e) {
+        return data
+      }
+    },
+    /**
+     * sessionStorage getItem
+     */
+    ssGet (key) {
+      return this.json(sessionstorage.getItem(key), 'parse')
+    },
+    /**
+     * sessionStorage setItem
+     */
+    ssSet (key, data) {
+      return sessionstorage.setItem(key, this.json(data, 'stringify'))
+    },
     /**
      * 构建请求
      */
@@ -155,17 +196,43 @@ export default {
       }
     },
     /**
+     * 更换 uid
+     */
+    changeUid (uid) {
+      this.uid = uid
+      this.isShowHistory = false
+      this.loader(uid)
+    },
+    /**
+     * 输入框聚焦事件
+     */
+    onFocus () {
+      if (this.isLoad) {
+        this.isShowHistory = true
+      }
+    },
+    /**
+     * 输入框失焦事件
+     */
+    onBlur () {
+      if (!this.isHover) {
+        this.isShowHistory = false
+      }
+    },
+    /**
      * 加载
      */
     async loader (uid) {
       if (this.player) {
         this.player.pause()
         this.player.destroy()
+        this.player = null
       }
 
       this.error = ''
       this.isLoad = false
       this.isWait = true
+      this.isShowHistory = false
 
       if (!uid) {
         this.msg = 'UID 不能为空'
@@ -173,28 +240,36 @@ export default {
         return
       }
 
-      this.percentage = 0
-      this.msg = '加载歌单中...'
-
-      const ids = await this.getIds(uid, 1)
-      if (!size(ids)) {
-        this.msg = '没有歌单信息'
-        this.isWait = false
-        return
+      if (!includes(this.uidList, uid)) {
+        this.uidList.push(uid)
       }
 
-      this.dataList = []
+      this.percentage = 0
+      this.msg = '加载歌单中...'
+      this.ssSet('__lastuid', uid)
+      this.ssSet('__uidlist', this.uidList)
 
-      for (const id of ids) {
-        const data = await this.getDetail(id)
-        const ksongmid = get(data, 'ksongmid')
-        const lrc = await this.getLyric(ksongmid)
-        data.lrc = lrc || '[00:00.00] 暂无歌词'
-        this.percentage = round(((indexOf(ids, id) + 1) / size(ids)) * 100)
-        this.msg = `加载歌曲 (${indexOf(ids, id) + 1}/${size(ids)}) ${
-          data.name
-        }`
-        this.dataList.push(data)
+      this.dataList = this.ssGet(`__uid_${uid}`) || []
+
+      if (!size(this.dataList)) {
+        const ids = await this.getIds(uid, 1)
+        if (!size(ids)) {
+          this.msg = '没有歌单信息'
+          this.isWait = false
+          return
+        }
+
+        for (const id of ids) {
+          const data = await this.getDetail(id)
+          const ksongmid = get(data, 'ksongmid')
+          const lrc = await this.getLyric(ksongmid)
+          data.lrc = lrc || '[00:00.00] 暂无歌词'
+          this.percentage = round(((indexOf(ids, id) + 1) / size(ids)) * 100)
+          this.msg = `加载歌曲 (${indexOf(ids, id) + 1}/${size(ids)}) ${
+            data.name
+          }`
+          this.dataList.push(data)
+        }
       }
 
       this.isWait = false
@@ -205,6 +280,7 @@ export default {
       } else {
         this.msg = ''
         this.isLoad = true
+        this.ssSet(`__uid_${uid}`, this.dataList)
         this.render()
       }
     },
@@ -287,6 +363,7 @@ export default {
   display flex
   flex-direction column
   .label
+    position relative
     padding 9px
     background #eee
     border-radius 3px
@@ -298,10 +375,11 @@ export default {
       padding 0 6px
       text-align center
       color #666
-      border 1px solid #ddd
+      border 1PX solid #ddd
       border-radius 3px
       box-sizing border-box
       outline 0
+      transition all .2s
       &:focus
         border-color #bbb
       &::placeholder
@@ -309,6 +387,37 @@ export default {
       &[readonly]
         opacity .65
         cursor not-allowed
+    .history
+      position absolute
+      z-index 9
+      top 41px
+      left 10px
+      right 10px
+      padding 0
+      max-height 186px
+      margin 0 auto
+      list-style none
+      text-align center
+      overflow auto
+      cursor pointer
+      background #fff
+      box-shadow 0 3px 9px 0 #ccc
+      transform translateY(-50%) scale(1, 0)
+      transition transform .2s
+      &--active
+        transform translateY(0) scale(1, 1)
+      &-item
+        font-size 12px
+        height 30px
+        line-height 30px
+        color #999
+        background #fff
+        border-bottom 1PX solid #eee
+        transition background .2s
+        &:hover
+          background #e9e9e9
+        &:last-child
+          border-bottom 0
   .message
     font-size 12px
     height 30px
@@ -354,7 +463,7 @@ export default {
     box-shadow none
     &-body
       position initial
-      padding 9px
+      padding 9px 10px
     &-info
       display flex
       flex-direction column
@@ -410,6 +519,7 @@ export default {
     &-list
       display block !important
       overflow auto !important
+      width 100%
       &::-webkit-scrollbar
         display none
     &-list-index

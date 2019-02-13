@@ -28,4 +28,18 @@ body
 
 .page
   min-height 100%
+
+::-webkit-scrollbar
+  width 5px
+  height 5px
+  &-thumb,
+  &-track-piece
+    border 0
+    background #f5f5f5
+  &-thumb
+    &:vertical,
+    &:horizontal
+      background #d5d5d5
+      &:hover
+        background #b5b5b5
 </style>
