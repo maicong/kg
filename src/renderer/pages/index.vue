@@ -244,6 +244,9 @@ export default {
      * 加载
      */
     async loader (uid) {
+      if (this.__isLoader) return
+      this.__isLoader = true
+
       if (this.player) {
         this.player.pause()
         this.player.destroy()
@@ -258,6 +261,7 @@ export default {
       if (!uid) {
         this.msg = 'UID 不能为空'
         this.isWait = false
+        this.__isLoader = false
         return
       }
 
@@ -277,6 +281,7 @@ export default {
         if (!size(ids)) {
           this.msg = '没有歌单信息'
           this.isWait = false
+          this.__isLoader = false
           return
         }
 
@@ -304,6 +309,8 @@ export default {
         this.ssSet(`__uid_${uid}`, this.dataList)
         this.render()
       }
+
+      this.__isLoader = false
     },
     /**
      * 渲染
