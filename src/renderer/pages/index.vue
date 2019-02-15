@@ -71,17 +71,12 @@ export default {
       isHover: false,
       isShowHistory: false,
       percentage: 0,
-      uid: this.ssGet('__lastuid'),
+      uid: '',
       player: null,
       msg: '',
       error: '',
       uidList: this.ssGet('__uidlist') || [],
       dataList: []
-    }
-  },
-  mounted () {
-    if (this.uid) {
-      this.loader(this.uid)
     }
   },
   methods: {
@@ -228,7 +223,7 @@ export default {
      * 输入框聚焦事件
      */
     onFocus () {
-      if (this.isLoad && size(this.uidList) > 1) {
+      if (!this.isWait && size(this.uidList)) {
         this.isShowHistory = true
       }
     },
@@ -265,13 +260,8 @@ export default {
         return
       }
 
-      if (!includes(this.uidList, uid)) {
-        this.uidList.push(uid)
-      }
-
       this.percentage = 0
       this.msg = '加载歌单中...'
-      this.ssSet('__lastuid', uid)
       this.ssSet('__uidlist', this.uidList)
 
       this.dataList = this.ssGet(`__uid_${uid}`) || []
@@ -306,6 +296,11 @@ export default {
       } else {
         this.msg = ''
         this.isLoad = true
+
+        if (!includes(this.uidList, uid)) {
+          this.uidList.push(uid)
+        }
+
         this.ssSet(`__uid_${uid}`, this.dataList)
         this.render()
       }
