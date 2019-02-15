@@ -107,7 +107,8 @@ function createWindow () {
     useContentSize: true,
     webPreferences: {
       devTools: true,
-      nodeIntegration: true
+      nodeIntegration: true,
+      webSecurity: false
     }
   })
 

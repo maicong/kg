@@ -1,6 +1,7 @@
 import App from './App'
 import Vue from 'vue'
 import axios from 'axios'
+import { cacheAdapterEnhancer } from 'axios-extensions'
 import fetchJsonp from 'fetch-jsonp'
 import router from './router'
 import store from './store'
@@ -21,7 +22,12 @@ axios.interceptors.response.use(
   }
 )
 
-Vue.http = Vue.prototype.$http = axios
+const http = axios.create({
+  headers: { 'Cache-Control': 'no-cache' },
+  adapter: cacheAdapterEnhancer(axios.defaults.adapter)
+})
+
+Vue.http = Vue.prototype.$http = http
 Vue.jsonp = Vue.prototype.$jsonp = fetchJsonp
 Vue.config.productionTip = false
 

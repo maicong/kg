@@ -57,6 +57,7 @@ import APlayer from 'aplayer'
 import Mousetrap from 'mousetrap'
 import qs from 'qs'
 import sessionstorage from 'sessionstorage'
+import downloadjs from 'downloadjs'
 
 import { get, size, map, indexOf, includes, round, replace } from 'lodash'
 import { format } from 'date-fns'
@@ -173,6 +174,7 @@ export default {
       return {
         ksongmid: get(data, 'ksong_mid'),
         name: get(data, 'song_name'),
+        singer: nick,
         artist: `${nick} (${time})`,
         url: get(data, 'playurl'),
         cover: get(data, 'cover')
@@ -196,6 +198,25 @@ export default {
       }
     },
     /**
+     * 下载
+     */
+    async downloadAudio (url, filename) {
+      if (this.__isDownload) return
+      this.__isDownload = true
+      const data = await this.$http
+        .get(url, {
+          responseType: 'blob'
+        })
+        .then(res => res.data)
+      if (data) {
+        const blob = new Blob([data], {
+          type: 'audio/mpeg'
+        })
+        downloadjs(blob, filename)
+      }
+      this.__isDownload = false
+    },
+    /**
      * 更换 uid
      */
     changeUid (uid) {
@@ -207,7 +228,7 @@ export default {
      * 输入框聚焦事件
      */
     onFocus () {
-      if (this.isLoad) {
+      if (this.isLoad && size(this.uidList) > 1) {
         this.isShowHistory = true
       }
     },
@@ -308,18 +329,20 @@ export default {
 
       const el = document.querySelector('.aplayer-music')
       const span = document.createElement('span')
-      const link = document.createElement('a')
 
       span.classList = 'aplayer-link'
-      link.textContent = '下载'
+      span.textContent = '下载'
 
-      span.appendChild(link)
       el.appendChild(span)
 
       this.player.on('canplay', () => {
         const current = this.player.list.audios[this.player.list.index]
-        link.href = current.url
-        link.download = `${current.name}-${current.artist}`
+        span.onclick = async () => {
+          await this.downloadAudio(
+            current.url,
+            `${current.name}-${current.singer}`
+          )
+        }
       })
 
       this.player.on('listswitch', () => {
@@ -498,17 +521,18 @@ export default {
       display flex
       align-items center
     &-author
-      white-space pre-wrap
+      flex 1
+      margin 0 6px
+      white-space nowrap
+      text-overflow ellipsis
+      overflow hidden
     &-link
       font-size 12px
-      color #666
-      flex 1
       text-align right
-      a
-        color currentColor
-        text-decoration none
-        &:hover
-          color blue
+      cursor pointer
+      color #666
+      &:hover
+        color blue
     &-icon
       &-order,
       &-loop
