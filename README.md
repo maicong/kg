@@ -2,6 +2,10 @@
 
 App for listen and dowload music from kg.qq.com
 
+## Release
+
+[![GitHub release](https://img.shields.io/github/release/maicong/kg.svg?style=for-the-badge&colorB=red)](https://github.com/maicong/kg/releases)
+
 ## Used
 
 ```bash
@@ -13,8 +17,8 @@ yarn run dev
 
 # build electron application for production
 yarn run build
-
-
-# lint all JS/Vue component files in `src/`
-yarn run lint
 ```
+
+## License
+
+The MIT License (MIT)
