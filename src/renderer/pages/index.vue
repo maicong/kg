@@ -151,6 +151,27 @@ export default {
       return []
     },
     /**
+     * 获取 DOM 里的歌曲列表
+     */
+    async getDomIds (uid) {
+      const ifm = document.createElement('iframe')
+      ifm.id = `ifm-${uid}`
+      ifm.hidden = true
+      ifm.src = `https://node.kg.qq.com/personal?uid=${uid}`
+      document.body.appendChild(ifm)
+      const data = await new Promise(resolve => {
+        ifm.onload = () => {
+          const ids = []
+          const ugclist = get(ifm, 'contentWindow.__DATA__.data.ugclist')
+          if (size(ugclist)) {
+            map(ugclist, v => ids.push(v.shareid))
+            resolve(ids)
+          }
+        }
+      })
+      return data
+    },
+    /**
      * 获取歌曲详情
      */
     async getDetail (id) {
@@ -267,7 +288,7 @@ export default {
       this.dataList = this.ssGet(`__uid_${uid}`) || []
 
       if (!size(this.dataList)) {
-        const ids = await this.getIds(uid, 1)
+        const ids = await this.getDomIds(uid)
         if (!size(ids)) {
           this.msg = '没有歌单信息'
           this.isWait = false
